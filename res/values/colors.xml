@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="index_bottom">#ffed9d05</color>
+    <color name="actionBar_color">#ff7fd9d0</color>
+	<color name="actionBar_color_pressed">#ffc4e4e9</color>
+    <color name="white_color">#ffffffff</color>
+    <color name="prompt_color">#ffdb0f0c</color>
+    <color name="white">#ffffffff</color>
+    <color name="pure_white">#fffcfbfb</color>
+    <color name="background">#fff2f2f2</color>
+    <color name="table_background">#ffcbcbcb</color>
+    <color name="gray">#ff808080</color>
+    <color name="light_white">#fffcfcfc</color>
+    <color name="tab_main_color">#ff1e1d1d</color>
+    <color name="title_color">#907fd9d0</color>
+    <color name="bg_review_font_c">#ff2177c7</color>
+    <color name="bg_review_font_n">#ffffffff</color>
+    <color name="listview_normal">#ffffffff</color>
+    <color name="listview_press">#ffd7d7d7</color>
+    <color name="listview_news_normal">#ffe2f1ef</color>
+    <color name="listview_news_press">#ffc4e4e9</color>
+    <color name="listview_review_normal">#ffbce1eb</color>
+    <color name="listview_review_press">#ffd1eaf1</color>
+    <color name="listview_search_normal">#ffd3edf4</color>
+    <color name="testOdd">#ffd3edf4</color>
+    <color name="testEven">#ffadcdd7</color>
+    <color name="recordOdd">#ffcce4f9</color>
+    <color name="recordEven">#ffabd1f2</color>
+    <color name="testbg">#ffe2f1ef</color>
+</resources>

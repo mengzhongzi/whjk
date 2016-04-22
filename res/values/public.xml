@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item type="id" name="logo"></item>
+	<!-- 标题-->
+	<item type="id" name="title"></item>
+	<item type="id" name="title_back"></item>
+	<!-- 登录注册界面-->
+	<item type="id" name="edit_user"></item>
+	<item type="id" name="edit_password"></item>
+	<item type="id" name="btn_enter"></item>
+	<item type="id" name="btn_register"></item>
+	
+	<!-- 主菜单-->
+	<item type="id" name="btn_ok"></item>
+	<item type="id" name="btn_cancel"></item>
+	<item type="id" name="tab_my"></item>
+	<item type="id" name="tab_record"></item>
+	<item type="id" name="tab_test"></item>
+	
+	<!-- 统计图 -->
+	
+	
+	
+	
+</resources>
+	
+	
+	
+	
+	
+	
+	

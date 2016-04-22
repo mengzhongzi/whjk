@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, MainActivity!</string>
+    
+	<!-- app 信息-->
+    <string name="hello">Hello!</string>
     <string name="app_name">稳和健康</string>
-
+		
+		
+		
+		
+	<string name="vector">风的影子</string>
+	
+	<!-- 登录相关 -->
+	<string name="user_name">用户名</string>
+	<string name="password">密码</string>
+	<string name="hint_user">请输入帐号</string>
+	<string name="hint_password">请输入密码</string>
+	<string name="save_userAndPassword">保存用户名和密码</string>
+	<string name="draw_password">显示密码</string>
+	<string name="enter">登录</string>
+	<string name="register">注册</string>
+	<string name="enter_out">注销</string>
+	<string name="forget_the_password">忘记密码</string>
+	<string name="search">搜索</string>
+	
+	<!-- 分类-->
+	<string name="xuetangyi">血糖仪</string>
+	<string name="xueyayi">血压仪</string>
+	<string name="tiwenji">体温计</string>
+	<string name="xueyangyi">血氧仪</string>
+	<string name="taixinyi">胎心仪</string>
+	<string name="tizhongji">体重计</string>
+	<string name="xindianyi">心电仪</string>
+	
+	<string name="celiang">测量</string>
+	<string name="jilu">记录</string>
+	<string name="zhixun">资讯</string>
+	<string name="geren">个人</string>
+	
+	<!-- 标题栏 -->
+	<string name="measure">测量</string>
+	<string name="record">记录</string>
+	<string name="health_information">健康资讯</string>
+	<string name="personal_setting">个人设置</string>
+	<string name="present_record">当天记录</string>
+	<string name="andrology">男科</string>
+	<string name="gynecology">妇科</string>
+	<string name="keep_in_good_health">养生</string>
+	<string name="infant_mom">母婴</string>
+	<string name="hairdressing">美容</string>
+		
+	
+	<string name="personal_details">个人信息</string>
+	<string name="my_consult">我的咨询</string>
+	<string name="send_type">发送方式</string>
+		
+	<string name="about_us">关于我们</string>
+	<string name="network_send">网络发送</string>
+	<string name="sms_send">短信发送</string>
+		
+	<string name="warm_prompt">温馨提示：</string>
+	<string name="hint_text">在选择流量或短信方式发送数据时，会产生一定的数据流量或短信费，所产生的具体费用将由运营商决定。</string>
+		
+	<!-- 数据图 -->
+	<string name="serial_number">序号</string>
+	<string name="time">时间</string>
+	<string name="temperature">温度</string>
+	<string name="animal_heat">体温</string>
+	<string name="concentration">浓度</string>
+	<string name="oxyhemoglobin_saturation">血氧饱和度</string>
+	<string name="high_pressure">高压</string>
+	<string name="low_tension">低压</string>
+	<string name="pulse_rate">脉率</string>
+	<string name="perfusion_index">灌注指数</string>
+	<string name="measuring_time">测量时间</string>
+	<string name="constitutional_index">体质指数</string>
+	<string name="weight">体重</string>
+	
+	
+		<!-- 对话框相关 -->
+	<string name="ok">确定</string>
+	<string name="cancel">取消</string>
+	
+	<string name="yes">是</string>
+	<string name="no">否</string>
+	<!-- 按钮相关 -->
+	<string name="empty">清空</string>
+	<!-- 退出相关 -->
+	<string name="back">返回</string>
+	<string name="quit_text">你确定要退出吗？</string>
+	
 </resources>
