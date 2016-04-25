@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+	android:constantSize="true">
+
+
+	<item 
+		android:state_enabled="true"
+		android:state_pressed="true"> 
+		<shape> 
+			<gradient
+				android:startColor="@color/listitem0_down" 
+				android:endColor="@color/listitem0_down" 
+				android:angle="90.0"> 
+			</gradient> 
+			<corners 
+				android:bottomRightRadius="0dp"  
+				android:bottomLeftRadius="0dp" 
+				android:topLeftRadius="0dp"  
+				android:topRightRadius="0dp" />  
+			<stroke
+				android:width="2dp" 
+				android:color="@color/listview_news_press" />  
+		</shape> 
+	</item>
+
+	<item 
+
+		android:state_focused="true"
+	> 
+		<shape> 
+			<gradient
+				android:startColor="@color/listitem0_up" 
+				android:endColor="@color/listitem0_up" 
+				android:angle="90.0"> 
+			</gradient> 
+			<corners 
+				android:bottomRightRadius="0dp"  
+				android:bottomLeftRadius="0dp" 
+				android:topLeftRadius="0dp"  
+				android:topRightRadius="0dp" /> 
+			<stroke
+				android:width="2dp" 
+				android:color="@color/listitem0_rect" />  
+		</shape> 
+	</item> 
+
+	<item
+	> 
+		<shape> 
+			<gradient 
+				android:startColor="@color/listitem0_up" 
+				android:endColor="@color/listitem0_up" 
+				android:angle="90.0"> 
+			</gradient> 
+			<corners 
+				android:bottomRightRadius="0dp"  
+				android:bottomLeftRadius="0dp" 
+				android:topLeftRadius="0dp"  
+				android:topRightRadius="0dp" />  
+
+		</shape> 
+	</item> 
+</selector>

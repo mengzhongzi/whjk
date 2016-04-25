@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="left|center"
+		android:layout_margin="4dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/present_record"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:layout_gravity="center"
+			android:gravity="left|center"
+			android:background="@drawable/list_item0"
+			android:minHeight="60dp"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="right|center"
+			android:layout_marginRight="10dp"
+			android:src="@drawable/listitem_to"/>
+
+	</FrameLayout>
+
+	<View
+		android:layout_height="6dp"
+		android:layout_width="match_parent"/>
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="left|center"
+		android:layout_margin="4dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/tiwenji"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:layout_gravity="center"
+			android:gravity="left|center"
+			android:background="@drawable/list_item0"
+			android:minHeight="60dp"
+			android:id="@+id/jilu_wenduji"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="right|center"
+			android:layout_marginRight="10dp"
+			android:src="@drawable/listitem_to"/>
+
+	</FrameLayout>
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="left|center"
+		android:layout_margin="4dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/xuetangyi"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:layout_gravity="center"
+			android:gravity="left|center"
+			android:background="@drawable/list_item0"
+			android:minHeight="60dp"
+			android:id="@+id/jilu_xuetangyi"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="right|center"
+			android:layout_marginRight="10dp"
+			android:src="@drawable/listitem_to"/>
+
+	</FrameLayout>
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="left|center"
+		android:layout_margin="4dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/xueyayi"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:layout_gravity="center"
+			android:gravity="left|center"
+			android:background="@drawable/list_item0"
+			android:minHeight="60dp"
+			android:id="@+id/jilu_xueyayi"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="right|center"
+			android:layout_marginRight="10dp"
+			android:src="@drawable/listitem_to"/>
+
+	</FrameLayout>
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="left|center"
+		android:layout_margin="4dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/xueyangyi"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:layout_gravity="center"
+			android:gravity="left|center"
+			android:background="@drawable/list_item0"
+			android:minHeight="60dp"
+			android:id="@+id/jilu_xueyangyi"/>
+
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="right|center"
+			android:layout_marginRight="10dp"
+			android:src="@drawable/listitem_to"/>
+
+	</FrameLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_height="80dp"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_margin="4dp">
+
+			<Button
+				android:layout_height="match_parent"
+				android:text="@string/xuetangyi"
+				android:drawableLeft="@drawable/ic_test_xuetang"
+				android:layout_width="match_parent"
+				android:gravity="left|center"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/list_item0"
+				android:id="@+id/celiang_xuetang"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="80dp"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_margin="4dp">
+
+			<Button
+				android:layout_height="match_parent"
+				android:text="@string/xueyayi"
+				android:drawableLeft="@drawable/ic_test_xueya"
+				android:layout_width="match_parent"
+				android:gravity="left|center"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/list_item0"
+				android:id="@+id/celiang_xueya"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="80dp"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_margin="4dp">
+
+			<Button
+				android:layout_height="match_parent"
+				android:text="@string/xueyangyi"
+				android:drawableLeft="@drawable/ic_test_xueyang"
+				android:layout_width="match_parent"
+				android:gravity="left|center"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/list_item0"
+				android:id="@+id/celiang_xueyang"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="80dp"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_margin="4dp">
+
+			<Button
+				android:layout_height="match_parent"
+				android:text="@string/tiwenji"
+				android:drawableLeft="@drawable/ic_test_tiwen"
+				android:layout_width="match_parent"
+				android:gravity="left|center"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:background="@drawable/list_item0"
+				android:id="@+id/celiang_tiwen"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

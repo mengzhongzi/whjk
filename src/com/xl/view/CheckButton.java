@@ -12,12 +12,12 @@ private Drawable drawable_check;
 public CheckButton(Context context)
 {
 	super(context);
-	setBackground(null);
+	setBackgroundDrawable(null);
 }
 		public CheckButton(android.content.Context context, android.util.AttributeSet attrs)
 		{
 			super(context,attrs);
-			setBackground(null);
+			setBackgroundDrawable(null);
 		}
 
 
@@ -27,11 +27,11 @@ public CheckButton(Context context)
 			this.isCheck=p1;
 				if(!isCheck)
 					{
-						setBackground(null);
+						setBackgroundDrawable(null);
 					}
 				else
 					{
-						setBackground(drawable_check);
+						setBackgroundDrawable(drawable_check);
 					}
 			}
 
@@ -48,12 +48,12 @@ public CheckButton(Context context)
 				if(isCheck)
 				{
 					isCheck=false;
-					setBackground(null);
+					setBackgroundDrawable(null);
 				}
 				else
 				{
 					isCheck=true;
-					setBackground(drawable_check);
+					setBackgroundDrawable(drawable_check);
 				}
 			}
 		

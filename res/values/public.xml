@@ -7,8 +7,12 @@
 	<!-- 登录注册界面-->
 	<item type="id" name="edit_user"></item>
 	<item type="id" name="edit_password"></item>
+	<item type="id" name="check_draw_password"></item>
+	<item type="id" name="check_save_userAndPassword"></item>
 	<item type="id" name="btn_enter"></item>
+	<!-- 注册-->
 	<item type="id" name="btn_register"></item>
+	
 	
 	<!-- 主菜单-->
 	<item type="id" name="btn_ok"></item>
@@ -18,10 +22,35 @@
 	<item type="id" name="tab_test"></item>
 	
 	<!-- 统计图 -->
+	<item type="id" name="chart1"></item>
 	
+	<!-- 列表 -->
+	<item type="id" name="text1"></item>
+	<item type="id" name="text2"></item>
+	<item type="id" name="text3"></item>
+	<item type="id" name="text4"></item>
+	<item type="id" name="text5"></item>
+	<item type="id" name="text6"></item>
 	
+	<!-- 统计图 -->
+	<item type="id" name="chart_tiwen"></item>
+	<item type="id" name="chart_xueya"></item>
+	<item type="id" name="chart_xuetang"></item>
+	<item type="id" name="chart_xueyang"></item>
 	
+	<!-- 搜索控件 -->
+	<item type="id" name="layout_search"></item>
+	<!-- 设备与连接 -->
+	<item type="id" name="btn_search"></item>
+	<item type="id" name="btn_collect"></item>
+	<item type="id" name="btn_empty"></item>
 	
+	<!-- listView -->
+	<item type="id" name="listview2"></item>
+	<item type="id" name="listview3"></item>
+	<item type="id" name="listview4"></item>
+	<item type="id" name="listview5"></item>
+	<item type="id" name="listview6"></item>
 </resources>
 	
 	

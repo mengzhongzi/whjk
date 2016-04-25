@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 带圆角 蓝色背景 黑色边框 按钮 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:constantSize="true">
+	<item 
+		android:state_enabled="true"
+		android:state_pressed="true"> 
+		<shape>  
+			
+			<solid android:color="@color/button_blue_down" />        
+			<corners 
+				android:topLeftRadius="6dp" 
+				android:topRightRadius="6dp"  
+				android:bottomRightRadius="6dp" 
+				android:bottomLeftRadius="6dp" />      
+			<stroke
+				android:width="6dp" 
+				android:color="#0060a0f0" />
+
+		</shape>
+
+  </item>
+
+
+	<item 
+
+		android:state_focused="true"
+	> 
+		<shape>  
+			
+			<solid android:color="@color/button_blue_up" />        
+			<corners 
+				android:topLeftRadius="6dp" 
+				android:topRightRadius="6dp"  
+				android:bottomRightRadius="6dp" 
+				android:bottomLeftRadius="6dp" />      
+			    
+			<stroke
+				android:width="6dp" 
+				android:color="#2060a0f0" />
+		</shape>
+
+  </item>
+
+	<item 
+		android:state_enabled="true" 
+		android:state_pressed="false"  >
+		<shape>  
+			<solid android:color="@color/button_blue_up" />        
+			<corners 
+				android:topLeftRadius="6dp" 
+				android:topRightRadius="6dp"  
+				android:bottomRightRadius="6dp" 
+				android:bottomLeftRadius="6dp" />      
+			<stroke
+				android:width="6dp" 
+				android:color="#0060a0f0" />
+			       
+		</shape>  
+	</item>
+
+	<item 
+	>
+		<shape>  
+			<solid android:color="@color/button_blue_up" />        
+			<corners 
+				android:topLeftRadius="6dp" 
+				android:topRightRadius="6dp"  
+				android:bottomRightRadius="6dp" 
+				android:bottomLeftRadius="6dp" />      
+			    
+			<stroke
+				android:width="6dp" 
+				android:color="#2060a0f0" />
+			
+		</shape>  
+	</item>
+</selector>

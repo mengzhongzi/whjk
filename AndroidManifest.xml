@@ -14,6 +14,7 @@
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
+					android:icon="@drawable/ic_launcher"
             android:name=".LoadActivity" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +22,84 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-				
+			<activity 
+				android:icon="@drawable/ic_launcher"
+				android:name=".EnterActivity"
+				android:theme="@style/test"
+			/>
+		
 				<activity 
+					android:icon="@drawable/ic_launcher"
 					android:name=".MainActivity"
 					android:theme="@style/test"
 					/>
-				
-				
+				<activity
+					android:name=".WendujiActivity"
+					android:theme="@style/test"
+					/>
+			<activity
+				android:name=".XuetangyiActivity"
+				android:theme="@style/test"
+			/>
+			<activity
+				android:name=".XueyangyiActivity"
+				android:theme="@style/test"
+			/>
+			<activity
+				android:name=".XueyayiActivity"
+				android:theme="@style/test"
+			/>
+		
+			<activity
+				android:name=".CxuetangActivity"
+				android:theme="@style/test"
+			/>
+			<activity
+				android:name=".CxueyaActivity"
+				android:theme="@style/test"
+			/>
+			<activity
+				android:name=".CxueyangActivity"
+				android:theme="@style/test"
+			/>
+			<activity
+				android:name=".CtiwenActivity"
+				android:theme="@style/test"
+			/>
+		<activity
+			android:name=".DetailsActivity"
+			android:theme="@style/test"
+			/>
+		<activity
+			android:name=".SearchActivity"
+			android:theme="@style/test"
+			/>
+		
     </application>
-
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+	<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	
 </manifest>

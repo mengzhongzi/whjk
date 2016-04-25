@@ -10,7 +10,7 @@ public interface NetContext
 	
 	
 	//设置监听器
-	public void setListener();
+	public void setListener(NetListener listener);
 	
 	//获取体温计
 	

@@ -3,11 +3,17 @@
     <color name="index_bottom">#ffed9d05</color>
     <color name="actionBar_color">#ff7fd9d0</color>
 	<color name="actionBar_color_pressed">#ffc4e4e9</color>
+	
+	<color name="button_blue_down">#ff7fd9d0</color>
+	<color name="button_blue_up">#ffc4e4e9</color>
+	
     <color name="white_color">#ffffffff</color>
     <color name="prompt_color">#ffdb0f0c</color>
     <color name="white">#ffffffff</color>
     <color name="pure_white">#fffcfbfb</color>
-    <color name="background">#fff2f2f2</color>
+		
+    <color name="background">#efefef</color>
+		
     <color name="table_background">#ffcbcbcb</color>
     <color name="gray">#ff808080</color>
     <color name="light_white">#fffcfcfc</color>
@@ -17,8 +23,22 @@
     <color name="bg_review_font_n">#ffffffff</color>
     <color name="listview_normal">#ffffffff</color>
     <color name="listview_press">#ffd7d7d7</color>
-    <color name="listview_news_normal">#ffe2f1ef</color>
-    <color name="listview_news_press">#ffc4e4e9</color>
+		
+    <color name="listview_news_normal">#ffffffff</color>
+    <color name="listview_news_press">#ffffffff</color>
+		
+	<color name="listitem0_down">#e8e8e8</color>
+	<color name="listitem0_up">#ffffff</color>
+	<color name="listitem0_rect">#a0e0f0</color>
+	
+	<color name="line_tiwen">#f05050</color>
+	<color name="line_xuetang">#ff407a</color>
+	<color name="line_xueya">#a060f0</color>
+	<color name="line_xueyang">#909090</color>
+	<color name="chart_legend">#202020</color>
+	<color name="chart_xlable">#202020</color>
+	<color name="chart_ylable">#202020</color>
+	
     <color name="listview_review_normal">#ffbce1eb</color>
     <color name="listview_review_press">#ffd1eaf1</color>
     <color name="listview_search_normal">#ffd3edf4</color>

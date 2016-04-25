@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/time"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/serial_number"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/temperature"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
+	</LinearLayout>
+
+	<FrameLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:layout_weight="1.0">
+
+		<ListView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+
+		<LinearLayout
+			android:id="@id/layout_search"
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_gravity="center"
+			android:visibility="visible"
+			android:gravity="center">
+
+			<ProgressBar
+				android:layout_height="wrap_content"
+				style="@style/progressBar1"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="@string/searching"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"/>
+
+		</LinearLayout>
+
+	</FrameLayout>
+
+	<LinearLayout
+		android:layout_height="64dp"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/search"
+			android:layout_width="match_parent"
+			android:layout_gravity="left|center"
+			android:layout_weight="1.0"
+			android:background="@drawable/button_blue_small"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/empty"
+			android:layout_width="match_parent"
+			android:layout_gravity="right|center"
+			android:layout_weight="1.0"
+			android:background="@drawable/button_blue_small"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

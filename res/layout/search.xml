@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_weight="1.0">
+
+		<ListView
+			android:id="@+id/searchListView"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"/>
+
+		<LinearLayout
+			android:id="@+id/search_progress"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:visibility="visible">
+
+			<ProgressBar
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="@string/searching"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"/>
+
+		</LinearLayout>
+
+	</FrameLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/search_again"
+			android:background="@drawable/button_blue_small"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/stop_search"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:background="@drawable/button_blue_small"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

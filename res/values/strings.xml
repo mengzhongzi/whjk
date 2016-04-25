@@ -21,7 +21,7 @@
 	<string name="register">注册</string>
 	<string name="enter_out">注销</string>
 	<string name="forget_the_password">忘记密码</string>
-	<string name="search">搜索</string>
+	
 	
 	<!-- 分类-->
 	<string name="xuetangyi">血糖仪</string>
@@ -61,7 +61,31 @@
 	<string name="warm_prompt">温馨提示：</string>
 	<string name="hint_text">在选择流量或短信方式发送数据时，会产生一定的数据流量或短信费，所产生的具体费用将由运营商决定。</string>
 		
+	<!-- 数据表 个人信息 -->
+	<string name="info_personal_details">个人信息</string>
+	<string name="info_accounts">帐号</string>
+	<string name="info_name">姓名</string>
+	<string name="info_marital_status">婚姻状况</string>
+	<string name="info_gender">性别</string>
+	<string name="info_doctor">责任医生</string>
+	<string name="info_identity_card_number">身份证号</string>
+	<string name="info_address">地址</string>
+	<string name="info_tel">联系方式</string>
+	<string name="info_mail">邮箱</string>
+	
+	<string name="info_previous_history">既往史</string>
+	<string name="info_allergy">过敏史</string>
+	<string name="info_contagion">慢病/传染病</string>
+	<string name="info_personal_life">个人生活</string>
+	
 	<!-- 数据图 -->
+	<string name="chart_tiwen">体温数据图</string>
+	<string name="chart_xuetang">血糖数据图</string>
+	<string name="chart_xueya">血压数据图</string>
+	<string name="chart_xueyang">血氧数据图</string>
+	
+	<string name="prior15">前15天</string>
+	<string name="next15">后15天</string>
 	<string name="serial_number">序号</string>
 	<string name="time">时间</string>
 	<string name="temperature">温度</string>
@@ -75,7 +99,9 @@
 	<string name="measuring_time">测量时间</string>
 	<string name="constitutional_index">体质指数</string>
 	<string name="weight">体重</string>
-	
+	<string name="spo2">SPO2</string>
+	<string name="pr">PR</string>
+	<string name="pi">PI</string>
 	
 		<!-- 对话框相关 -->
 	<string name="ok">确定</string>
@@ -83,9 +109,19 @@
 	
 	<string name="yes">是</string>
 	<string name="no">否</string>
+  <!-- 正在搜索 -->
+  <string name="no_device">未搜索到设备</string>
+  <string name="searching">正在搜索</string>
+	<string name="bluetooth_searching">蓝牙搜索中</string>
+  
 	<!-- 按钮相关 -->
+	<string name="search_again">重新搜索</string>
+	<string name="stop_search">停止搜索</string>
+	<string name="search">搜索</string>
+	<string name="collect">采集</string>
 	<string name="empty">清空</string>
 	<!-- 退出相关 -->
+  <string name="exit_hint">再按一次返回键退出</string>
 	<string name="back">返回</string>
 	<string name="quit_text">你确定要退出吗？</string>
 	

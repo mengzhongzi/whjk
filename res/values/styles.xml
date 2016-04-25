@@ -4,12 +4,32 @@
 		　<item name="android:background">@drawable/title_bg</item>
 		</style>
 		<style name="test" parent="android:Theme.Light">　
-			　<item name="android:windowTitleSize">40dp</item>　
+			　<item name="android:windowTitleSize">52dp</item>　
 			　<item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>　
-			
+			<item name="android:buttonStyle" >@style/AppButton</item>
 	　</style>
 		<style name="LoginCheckbox" parent="@android:style/Widget.CompoundButton.CheckBox">
 			<item name="android:button">@drawable/selector_checkbox_login</item>
     </style>
+		
+
+		<style name="AppButton" parent="@android:Widget.Button">
+			<item name="android:background">@drawable/button_blue</item>
+			<item name="android:minHeight">40dp</item>
+			<item name="android:paddingLeft">30dp</item>
+			<item name="android:paddingRight">30dp</item>
+			<item name="android:layout_margin">8dp</item>
+		</style>
+		
+		<style
+			name="progressBar1"
+			parent="@android:style/Widget.ProgressBar"
+			>
+			<item name="android:minWidth">68dp</item>
+			<item name="android:minHeight">68dp</item>
+			<item
+				name="android:indeterminateDrawable">@anim/load</item>
+				
+			</style>
 		
 	</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<com.github.mikephil.charting.charts.LineChart
+		android:id="@id/chart1"
+		android:layout_height="180dp"
+		android:layout_width="match_parent"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/prior15"
+			android:layout_width="wrap_content"
+			android:background="@drawable/button_blue_small"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/time"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="wrap_content"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="@string/next15"
+			android:layout_width="wrap_content"
+			android:background="@drawable/button_blue_small"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/serial_number"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/time"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="@string/temperature"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
+	</LinearLayout>
+
+	<ListView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:layout_weight="1.0"
+		android:id="@+id/list_tiwen"/>
+
+</LinearLayout>
+
