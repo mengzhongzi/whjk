@@ -27,6 +27,7 @@ import android.view.View.OnClickListener;
 import android.view.View;
 import java.util.Calendar;
 import android.widget.TextView;
+import com.xl.game.tool.Log;
 
 
 public class WendujiActivity extends StartActivity implements OnChartValueSelectedListener,Net_whjk_Listener,OnClickListener
@@ -64,6 +65,7 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 		public void onTiWen(ArrayList<String> list)
 			{
 				//
+				if(list!=null)
 				for(String name:list)
 				addData(name);
 			}
@@ -286,6 +288,7 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 		if(items.length>=2)
 		adapter.add(items[0],items[1]);
 		adapter.notifyDataSetChanged();
+		Log.e("添加体温数据",text);
 	}
 	
 	

@@ -23,14 +23,28 @@ import android.widget.Adapter;
 import android.view.View;
 import com.asm.wenhejiankang.net.Net_whjk_Listener;
 import com.asm.wenhejiankang.model.User;
+import java.util.Date;
+import com.asm.wenhejiankang.net.Net_whjk;
+import android.widget.Button;
+import android.widget.TextView;
+import android.view.View.OnClickListener;
+import com.xl.view.ItemAdapter;
+import com.xl.game.tool.Log;
 
 /*
 血糖仪界面
 
 */
 
-public class XuetangyiActivity extends StartActivity implements OnChartValueSelectedListener,AdapterView.OnItemClickListener,Net_whjk_Listener
+public class XuetangyiActivity extends StartActivity implements OnChartValueSelectedListener,AdapterView.OnItemClickListener,Net_whjk_Listener,OnClickListener
 	{
+
+		@Override
+		public void onClick(View p1)
+			{
+				// TODO: Implement this method
+			}
+		
 
 		@Override
 		public void onEnter(User user)
@@ -71,7 +85,9 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 		@Override
 		public void onXietang(ArrayList<String> list)
 			{
-				// TODO: Implement this method
+				if(list!=null)
+				for(String text:list)
+				addData(text);
 			}
 
 		@Override
@@ -123,7 +139,15 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 		private LineChart mChart;
 		ArrayList<Entry> entry;
 		ListView listview;
-    MyAdapter3 adapter;
+		Button btn_prior15,btn_next15;
+		TextView text_time;
+		
+    ItemAdapter adapter;
+		Net_whjk net;
+		XlApplication application;
+		Date update;
+		Date nextdate;
+		
 		@Override
 		protected void onCreate(Bundle savedInstanceState)
 			{
@@ -139,11 +163,25 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 			{
 
 				setContentView(R.layout.info_tiwen);
-				adapter = new MyAdapter3(this);		
+				adapter = new ItemAdapter(this);		
 				listview = (ListView)findViewById(R.id.list_tiwen);
-
+				btn_prior15=(Button)findViewById(R.id.prior15);
+				text_time=(TextView)findViewById(R.id.time);
+				btn_next15=(Button)findViewById(R.id.next15);
+				btn_prior15.setOnClickListener(this);
+				btn_next15.setOnClickListener(this);
+				text_time.setOnClickListener(this);
+				
+				
+				
 				listview.setOnItemClickListener(this);
 				onSetChart();
+				application=(XlApplication)getApplication();
+				net=application.getNetContext();
+				net.setListener(this);
+				nextdate=new Date();
+				update=getNextDay(nextdate);
+				getXuetang(update,nextdate);
 			}
 
 
@@ -222,18 +260,49 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 
 				listview.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
+				
 			}
+			
+		//获取指定时间到指定时间的血糖
+		void getXuetang(Date next,Date date)
+			{
+				net.getXietang(next,date);
+				text_time.setText(""+next.getMonth()+"."+next.getDay()+"-"+date.getMonth()+"."+date.getDay());
+			}
+			
+		//获取前15天时间
+		public static Date getNextDay(Date date) {
+				long time=date.getTime();
+				time=time-15*1000*60*60*24;
+				/*
+				 Calendar calendar = Calendar.getInstance();
+				 calendar.setTime(date);
+				 calendar.add(Calendar.DATE, -15);
+				 date = calendar.getTime();
+				 */
+				date=new Date(time);
+				return date;
+			}
+		
 
 		//添加一个温度信息
 		//参数：时间 温度
 		private void addData(ArrayList<Entry> entry, int time,float num)
 			{
 				entry.add(new Entry(num,time));
-				adapter.add(""+time,""+num);
+				adapter.add(""+adapter.getCount()+" "+time+" "+num);
 
 			}
 
-
+		//将获取的信息添加到列表
+		private void addData(String text)
+			{
+				String items[]=text.split(" ");
+				if(items.length>=2)
+					adapter.add(""+(adapter.getCount()+1)+" "+ text);
+				adapter.notifyDataSetChanged();
+				Log.e("添加血糖数据",text);
+			}
 
 		private void setData(ArrayList<Entry> entry, int count, float range) {
 

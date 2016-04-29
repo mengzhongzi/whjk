@@ -168,6 +168,7 @@ MyAdapter adapter;
 				Xietang_item item=new Xietang_item(date,num);
 				list.add(item);
 			}
+			
 	
 	     //开始搜索
 			 void searchStart()

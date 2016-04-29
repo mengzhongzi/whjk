@@ -1,25 +1,25 @@
 package com.asm.wenhejiankang;
-import com.github.mikephil.charting.charts.LineChart;
+import android.graphics.*;
+import android.view.*;
+import android.widget.*;
+import com.asm.wenhejiankang.net.*;
+import com.github.mikephil.charting.data.*;
+import com.github.mikephil.charting.utils.*;
+import java.util.*;
+
 import android.app.Activity;
-import com.github.mikephil.charting.interfaces.OnChartValueSelectedListener;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.charts.BarLineChartBase.BorderPosition;
-import android.graphics.Typeface;
-import android.graphics.Color;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.mikephil.charting.data.LineData;
-import java.util.ArrayList;
-import com.github.mikephil.charting.utils.YLabels;
-import com.github.mikephil.charting.utils.XLabels;
-import com.github.mikephil.charting.utils.Legend;
-import com.github.mikephil.charting.utils.Legend.LegendForm;
+import android.content.Context;
 import android.os.Bundle;
-import com.xl.game.tool.DisplayUtil;
-import android.widget.ListView;
-import com.xl.view.MyAdapter3;
-import com.asm.wenhejiankang.net.Net_whjk_Listener;
+import android.view.View.OnClickListener;
 import com.asm.wenhejiankang.model.User;
+import com.github.mikephil.charting.charts.BarLineChartBase.BorderPosition;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.interfaces.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.Legend.LegendForm;
+import com.xl.game.tool.DisplayUtil;
+import com.xl.view.MyAdapter3;
+import com.xl.view.ItemAdapter;
+import com.xl.game.tool.Log;
 
 /*
 血压统计图界面
@@ -28,8 +28,15 @@ import com.asm.wenhejiankang.model.User;
 */
 
 
-public class XueyayiActivity extends StartActivity implements OnChartValueSelectedListener,Net_whjk_Listener
+public class XueyayiActivity extends StartActivity implements OnChartValueSelectedListener,Net_whjk_Listener,OnClickListener
 	{
+
+		@Override
+		public void onClick(View p1)
+			{
+				// TODO: Implement this method
+			}
+		
 
 		@Override
 		public void onEnter(User user)
@@ -58,7 +65,9 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 		@Override
 		public void onXieya(ArrayList<String> list)
 			{
-				// TODO: Implement this method
+				if(list!=null)
+				for(String text:list)
+				addData(text);
 			}
 
 		@Override
@@ -114,7 +123,13 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 		private LineChart mChart;
 		ArrayList<Entry> entry;
 		ListView listview;
-    MyAdapter3 adapter;
+		Net_whjk net;
+		XlApplication application;
+		Button btn_prior15,btn_next15;
+		TextView text_time;
+		Date update,nextdate;
+		
+    ItemAdapter adapter;
 		@Override
 		protected void onCreate(Bundle savedInstanceState)
 			{
@@ -130,9 +145,20 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 			{
 
 				setContentView(R.layout.info_tiwen);
-				adapter = new MyAdapter3(this);		
+				adapter = new ItemAdapter(this);		
 				listview = (ListView)findViewById(R.id.list_tiwen);
-
+				btn_prior15=(Button)findViewById(R.id.prior15);
+				text_time=(TextView)findViewById(R.id.time);
+				btn_next15=(Button)findViewById(R.id.next15);
+				btn_prior15.setOnClickListener(this);
+				btn_next15.setOnClickListener(this);
+				text_time.setOnClickListener(this);
+				application=(XlApplication)getApplication();
+				net=application.getNetContext();
+				net.setListener(this);
+				nextdate=new Date();
+				update=getNextDay(nextdate);
+				getXieya(update,nextdate);
 				onSetChart();
 			}
 
@@ -213,17 +239,44 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				listview.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
 			}
+			
+			void getXieya(Date update,Date nextdate)
+			{
+				net.getXieya(update,nextdate);
+					text_time.setText(""+update.getMonth()+"."+update.getDay()+"-"+nextdate.getMonth()+"."+nextdate.getDay());
+			}
+			
+		//获取前15天时间
+		public static Date getNextDay(Date date) {
+				long time=date.getTime();
+				time=time-15*1000*60*60*24;
+				/*
+				 Calendar calendar = Calendar.getInstance();
+				 calendar.setTime(date);
+				 calendar.add(Calendar.DATE, -15);
+				 date = calendar.getTime();
+				 */
+				date=new Date(time);
+				return date;
+			}
 
 		//添加一个温度信息
 		//参数：时间 温度
 		private void addData(ArrayList<Entry> entry, int time,float num)
 			{
 				entry.add(new Entry(num,time));
-				adapter.add(""+time,""+num);
+				adapter.add(""+adapter.getCount()+" "+ time+" "+num);
 
 			}
 
-
+		private void addData(String text)
+			{
+				String items[]=text.split(" ");
+				if(items.length>=2)
+					adapter.add(""+(adapter.getCount()+1)+" "+ text);
+				adapter.notifyDataSetChanged();
+				Log.e("添加血压数据",text);
+			}
 
 		private void setData(ArrayList<Entry> entry, int count, float range) {
 
@@ -262,5 +315,5 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
         // set data
         mChart.setData(data);
 			}
-
+		
 	}
