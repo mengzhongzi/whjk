@@ -42,6 +42,10 @@ public class Net_whjk extends Handler
 				case NET_UPERROR:
 					if(listener!=null)
 						listener.onUpError();
+					break;
+				case NET_UP:
+					if(listener!=null)
+						listener.onUp();
 			}
 		}
 	

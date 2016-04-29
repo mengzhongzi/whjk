@@ -29,7 +29,7 @@ public class BaseDao {
 		try {
 			Class.forName(DRIVER);
 		} catch (ClassNotFoundException e) {
-			throw new RuntimeException("数据库驱动加载失败！信息:" + e.getMessage());
+			//throw new RuntimeException("数据库驱动加载失败！信息:" + e.getMessage());
 		}
 	}
 	
@@ -42,7 +42,7 @@ public class BaseDao {
 			conn = DriverManager.getConnection(URL,USER,PWD);
 			
 		} catch (SQLException e) {
-			throw new RuntimeException("获取数据库连接失败！" + e.getMessage());
+			//throw new RuntimeException("获取数据库连接失败！" + e.getMessage());
 		}
 	}
 	
@@ -66,7 +66,7 @@ public class BaseDao {
 			}
 			queryRes = pstmt.executeQuery();
 		} catch (SQLException e) {
-			throw new RuntimeException("执行查询失败！"+e.getMessage());
+			//throw new RuntimeException("执行查询失败！"+e.getMessage());
 		}
 		return queryRes;
 	}
@@ -92,7 +92,7 @@ public class BaseDao {
 			}
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("执行更新失败！" +e.getMessage());
+			//throw new RuntimeException("执行更新失败！" +e.getMessage());
 		}
 		return result;
 	}
@@ -116,7 +116,7 @@ public class BaseDao {
 			try {
 				pstmt.close();
 			} catch (SQLException e) {
-				throw new RuntimeException("关闭PreparedStatement失败！");
+				//throw new RuntimeException("关闭PreparedStatement失败！");
 			}
 		}
 		if(conn != null)
@@ -124,7 +124,7 @@ public class BaseDao {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				throw new RuntimeException("关闭Connection失败！");
+				//throw new RuntimeException("关闭Connection失败！");
 			}
 		}
 	}

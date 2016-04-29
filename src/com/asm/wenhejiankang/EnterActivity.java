@@ -32,6 +32,13 @@ public class EnterActivity extends Activity implements CompoundButton.OnCheckedC
 	{
 
 		@Override
+		public void onUp()
+			{
+				// TODO: Implement this method
+			}
+
+
+		@Override
 		public void onEnter(User user)
 			{
 				// TODO: Implement this method

@@ -40,6 +40,13 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 	{
 
 		@Override
+		public void onUp()
+			{
+				// TODO: Implement this method
+			}
+
+
+		@Override
 		public void onClick(View p1)
 			{
 				// TODO: Implement this method
@@ -162,7 +169,7 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 		public void onContentView()
 			{
 
-				setContentView(R.layout.info_tiwen);
+				setContentView(R.layout.info_xuetang);
 				adapter = new ItemAdapter(this);		
 				listview = (ListView)findViewById(R.id.list_tiwen);
 				btn_prior15=(Button)findViewById(R.id.prior15);
@@ -231,8 +238,8 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 
 				// add data 设置数据
 				entry = new ArrayList<Entry>();
-				addData(entry, 1,37.3f);
-				addData(entry,2,37);
+				//addData(entry, 1,37.3f);
+				//addData(entry,2,37);
 				setData(entry,15, 100);
 
 				mChart.animateX(2500);
@@ -299,8 +306,13 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 			{
 				String items[]=text.split(" ");
 				if(items.length>=2)
+				{
 					adapter.add(""+(adapter.getCount()+1)+" "+ text);
+					entry.add(new Entry(Float.parseFloat(items[1]),adapter.getCount()));
+					}
 				adapter.notifyDataSetChanged();
+				setData(entry,15, 100);
+				
 				Log.e("添加血糖数据",text);
 			}
 

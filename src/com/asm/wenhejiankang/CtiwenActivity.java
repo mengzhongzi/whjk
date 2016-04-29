@@ -21,6 +21,13 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 	{
 
 		@Override
+		public void onUp()
+			{
+				// TODO: Implement this method
+			}
+
+
+		@Override
 		public void onEnter(User user)
 			{
 				// TODO: Implement this method

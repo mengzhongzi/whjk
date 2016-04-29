@@ -32,6 +32,13 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 	{
 
 		@Override
+		public void onUp()
+			{
+				// TODO: Implement this method
+			}
+
+
+		@Override
 		public void onClick(View p1)
 			{
 				// TODO: Implement this method
@@ -144,7 +151,7 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 		public void onContentView()
 			{
 
-				setContentView(R.layout.info_tiwen);
+				setContentView(R.layout.info_xueya);
 				adapter = new ItemAdapter(this);		
 				listview = (ListView)findViewById(R.id.list_tiwen);
 				btn_prior15=(Button)findViewById(R.id.prior15);
@@ -275,6 +282,7 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				if(items.length>=2)
 					adapter.add(""+(adapter.getCount()+1)+" "+ text);
 				adapter.notifyDataSetChanged();
+				setData(entry,15, 100);
 				Log.e("添加血压数据",text);
 			}
 

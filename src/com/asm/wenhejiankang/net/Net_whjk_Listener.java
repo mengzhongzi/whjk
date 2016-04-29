@@ -30,7 +30,10 @@ public interface Net_whjk_Listener
 		public void onXieyang(ArrayList<String> list);
 		//获取血氧信息失败
 		public void onXieyangError();
-
+    
+		//上传数据成功
+		public void onUp();
+		
 		//上传数据失败
 		public void onUpError();
 	

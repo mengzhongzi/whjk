@@ -34,6 +34,13 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 	{
 
 		@Override
+		public void onUp()
+			{
+				// TODO: Implement this method
+			}
+
+
+		@Override
 		public void onClick(View p1)
 			{
 				// TODO: Implement this method
@@ -171,6 +178,8 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 				application=(XlApplication)getApplication();
 				
 				net=application.getNetContext();
+				if(net==null)
+					finish();
 				net.setListener(this);
 				Date date=new Date();
 				getTiwen(getNextDay(date),date);
@@ -218,7 +227,7 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 
 		// no description text
 		mChart.setDescription("");
-		mChart.setNoDataTextDescription("You need to provide data for the chart.");
+		mChart.setNoDataTextDescription(getResources().getString(R.string.no_data));
 
 		// enable value highlighting
 		mChart.setHighlightEnabled(true);
@@ -241,33 +250,39 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 
 		// add data 设置数据
 		entry = new ArrayList<Entry>();
-		addData( 1,37.3f);
-		addData(2,37);
-		
-
-		mChart.animateX(2500);
-
+		//addData( 1,37.3f);
+		//addData(2,37);
+		setData(entry,15, 100);
 		Typeface tf = Typeface.createFromAsset(getAssets(), "OpenSans-Regular.ttf");
 
 		// get the legend (only possible after setting data)
 		Legend l = mChart.getLegend();
 
 		// modify the legend ...
-		// l.setPosition(LegendPosition.LEFT_OF_CHART);
-		l.setForm(LegendForm.LINE);
-		l.setTypeface(tf);
-		l.setTextColor(getResources().getColor(R.color.chart_legend));
-
+		if(l!=null)
+			{
+				// l.setPosition(LegendPosition.LEFT_OF_CHART);
+				l.setForm(LegendForm.LINE);
+				l.setTypeface(tf);
+				l.setTextColor(getResources().getColor(R.color.chart_legend));
+			}
 		XLabels xl = mChart.getXLabels();
-		//xl.setCenterXLabelText(true);
-		xl.setPosition(XLabels. XLabelPosition.BOTTOM);
-		xl.setTypeface(tf);
-		xl.setTextColor(getResources().getColor(R.color.chart_xlable));
-
+		if(xl!=null)
+			{
+				//xl.setCenterXLabelText(true);
+				xl.setPosition(XLabels. XLabelPosition.BOTTOM);
+				xl.setTypeface(tf);
+				xl.setTextColor(getResources().getColor(R.color.chart_xlable));
+			}
 		YLabels yl = mChart.getYLabels();
-		yl.setTypeface(tf);
-		yl.setTextColor(getResources().getColor(R.color.chart_ylable));
+		if(yl!=null)
+			{
+				yl.setTypeface(tf);
+				yl.setTextColor(getResources().getColor(R.color.chart_ylable));
+			}
 		
+		mChart.animateX(2500);
+
 		listview.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
 	}
@@ -278,7 +293,7 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 	{
 		entry.add(new Entry(num,time));
 		adapter.add(""+time,""+num);
-		setData(entry,15, 100);
+		
 	}
 	
 	//将获取的信息添加到列表
@@ -286,8 +301,14 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 	{
 		String items[]=text.split(" ");
 		if(items.length>=2)
+		{
 		adapter.add(items[0],items[1]);
+			entry.add(new Entry(Float.parseFloat(items[1]),adapter.getCount()));
+		}
 		adapter.notifyDataSetChanged();
+		setData(entry,15, 100);
+		
+				
 		Log.e("添加体温数据",text);
 	}
 	

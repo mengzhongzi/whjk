@@ -28,7 +28,7 @@
 	<string name="forget_the_password">忘记密码</string>
 	<!-- 提示 -->
 	<string name="up_error">数据上传失败</string>
-	
+	<string name="no_data">暂无数据</string>
 	<!-- 分类-->
 	<string name="xuetangyi">血糖仪</string>
 	<string name="xueyayi">血压仪</string>
