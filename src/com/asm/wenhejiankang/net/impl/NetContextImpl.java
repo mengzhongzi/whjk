@@ -238,7 +238,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
      */
 		private String formatDateString(String dateString)
 			{
-				return dateString.replace(" ","-");
+				return dateString.replace(" ","\n");
 			}
 
 	}

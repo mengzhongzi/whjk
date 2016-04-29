@@ -128,7 +128,7 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 
 
 		private LineChart mChart;
-		ArrayList<Entry> entry;
+		ArrayList<Entry> entry1,entry2,entry3;
 		ListView listview;
 		Net_whjk net;
 		XlApplication application;
@@ -215,10 +215,12 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				mChart.setBackgroundColor(getResources().getColor( R.color.background));
 
 				// add data 设置数据
-				entry = new ArrayList<Entry>();
-				addData(entry, 1,37.3f);
-				addData(entry,2,37);
-				setData(entry,15, 100);
+				entry1 = new ArrayList<Entry>();
+				entry2 = new ArrayList<Entry>();
+				entry3 = new ArrayList<Entry>();
+				addData( 1,130,50,37.3f);
+				addData(2,120,80,37);
+				setData(entry1,entry2,entry3, 15, 300);
 
 				mChart.animateX(2500);
 
@@ -269,10 +271,12 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 
 		//添加一个温度信息
 		//参数：时间 温度
-		private void addData(ArrayList<Entry> entry, int time,float num)
+		private void addData(int time,float num1,float num2,float num3)
 			{
-				entry.add(new Entry(num,time));
-				adapter.add(""+adapter.getCount()+" "+ time+" "+num);
+				entry1.add(new Entry(num1,time));
+				entry2.add(new Entry(num2,time));
+				entry3.add(new Entry(num3,time));
+				adapter.add(""+adapter.getCount()+" "+ time+" "+num1+" "+num2+" "+num3);
 
 			}
 
@@ -282,11 +286,11 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				if(items.length>=2)
 					adapter.add(""+(adapter.getCount()+1)+" "+ text);
 				adapter.notifyDataSetChanged();
-				setData(entry,15, 100);
+				setData(entry1,entry2,entry3, 15, 300);
 				Log.e("添加血压数据",text);
 			}
 
-		private void setData(ArrayList<Entry> entry, int count, float range) {
+		private void setData(ArrayList<Entry> entry, ArrayList<Entry> entry2, ArrayList<Entry> entry3, int count, float range) {
 
         ArrayList<String> xVals = new ArrayList<String>();
         for (int i = 0; i < count; i++) {
@@ -305,7 +309,7 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				 */
 
         // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(entry, "体温");
+        LineDataSet set1 = new LineDataSet(entry, "高压mmHg");
         set1.setColor(ColorTemplate.getHoloBlue());
         set1.setCircleColor(0xff60a0f0);
         set1.setLineWidth(DisplayUtil.dip2px(this,1));
@@ -313,10 +317,35 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
         set1.setFillAlpha(65);
         set1.setFillColor(ColorTemplate.getHoloBlue());
         set1.setHighLightColor(Color.rgb(244, 117, 117));
-
+        
         ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
         dataSets.add(set1); // add the datasets
 
+				LineDataSet set2 = new LineDataSet(entry2, "低压mmHg");
+        set2.setColor(0xff007030);
+        set2.setCircleColor(0xff007030);
+        set2.setLineWidth(DisplayUtil.dip2px(this,1));
+        set2.setCircleSize(DisplayUtil.dip2px(this,1));
+        set2.setFillAlpha(65);
+        set2.setFillColor(ColorTemplate.getHoloBlue());
+        set2.setHighLightColor(Color.rgb(244, 117, 117));
+
+        //ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
+        dataSets.add(set2); // add the datasets
+				
+				LineDataSet set3 = new LineDataSet(entry3, "脉率(次/分钟)");
+        set3.setColor(0xfff03030);
+        set3.setCircleColor(0xfff03030);
+        set3.setLineWidth(DisplayUtil.dip2px(this,1));
+        set3.setCircleSize(DisplayUtil.dip2px(this,1));
+        set3.setFillAlpha(65);
+        set3.setFillColor(ColorTemplate.getHoloBlue());
+        set3.setHighLightColor(Color.rgb(244, 117, 117));
+
+        //ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
+        dataSets.add(set3); // add the datasets
+				
+				
         // create a data object with the datasets
         LineData data = new LineData(xVals, dataSets);
 
