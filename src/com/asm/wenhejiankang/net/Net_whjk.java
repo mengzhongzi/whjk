@@ -272,7 +272,7 @@ public class Net_whjk extends Handler
 								{
 									Message msg=new Message();
 									msg.what=NET_XIEYANG;
-									net.getXieyang(user.getId(),start,end);
+									msg.obj=net.getXieyang(user.getId(),start,end);
 									handler.sendMessage(msg);
 								}
 						};
