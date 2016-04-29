@@ -18,15 +18,110 @@ import android.os.Bundle;
 import com.xl.game.tool.DisplayUtil;
 import android.widget.ListView;
 import com.xl.view.MyAdapter3;
+import com.asm.wenhejiankang.net.Net_whjk;
+import com.asm.wenhejiankang.net.Net_whjk_Listener;
+import com.asm.wenhejiankang.model.User;
+import java.util.Date;
+import android.widget.Button;
+import android.view.View.OnClickListener;
+import android.view.View;
+import java.util.Calendar;
+import android.widget.TextView;
 
 
-public class WendujiActivity extends StartActivity implements OnChartValueSelectedListener
+public class WendujiActivity extends StartActivity implements OnChartValueSelectedListener,Net_whjk_Listener,OnClickListener
 	{
+
+		@Override
+		public void onClick(View p1)
+			{
+				// TODO: Implement this method
+				switch(p1.getId())
+				{
+					case R.id.prior15:
+						
+						break;
+					case R.id.next15:
+						
+						break;
+				}
+			}
+		
+
+		@Override
+		public void onEnter(User user)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onError(String text)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onTiWen(ArrayList<String> list)
+			{
+				//
+				for(String name:list)
+				addData(name);
+			}
+
+		@Override
+		public void onTiwenError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieya(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieyaError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXietang(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXietangError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieyang(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieyangError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onUpError()
+			{
+				// TODO: Implement this method
+			}
+
 
 		@Override
 		public void onValueSelected(Entry p1, int p2)
 			{
-				// TODO: Implement this method
+				// 
+				
 			}
 
 		@Override
@@ -34,12 +129,19 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 			{
 				// TODO: Implement this method
 			}
+		//XlApplication application;
 		
 	
 		private LineChart mChart;
 		ArrayList<Entry> entry;
 		ListView listview;
     MyAdapter3 adapter;
+		Net_whjk net;
+		XlApplication application;
+		Button btn_prior15,btn_next15;
+		TextView text_time;
+		Date update,nextdate;
+		
 		@Override
 		protected void onCreate(Bundle savedInstanceState)
 			{
@@ -57,12 +159,41 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 				setContentView(R.layout.info_tiwen);
 				adapter = new MyAdapter3(this);		
 				listview = (ListView)findViewById(R.id.list_tiwen);
+				btn_prior15=(Button)findViewById(R.id.prior15);
+				text_time=(TextView)findViewById(R.id.time);
+				btn_next15=(Button)findViewById(R.id.next15);
+				btn_prior15.setOnClickListener(this);
+				btn_next15.setOnClickListener(this);
+				text_time.setOnClickListener(this);
 				
+				application=(XlApplication)getApplication();
+				
+				net=application.getNetContext();
+				net.setListener(this);
+				Date date=new Date();
+				getTiwen(getNextDay(date),date);
 				onSetChart();
 			}
 	
-	
-	
+	//获取指定时间到指定时间的体温
+	void getTiwen(Date next,Date date)
+	{
+		net.getTiwen(next,date);
+		text_time.setText(""+next.getMonth()+"."+next.getDay()+"-"+date.getMonth()+"."+date.getDay());
+	}
+	//获取前15天时间
+		public static Date getNextDay(Date date) {
+			long time=date.getTime();
+			time=time-15*1000*60*60*24;
+			/*
+				Calendar calendar = Calendar.getInstance();
+				calendar.setTime(date);
+				calendar.add(Calendar.DATE, -15);
+				date = calendar.getTime();
+				*/
+			date=new Date(time);
+				return date;
+			}
 	
 	private void onSetChart()
 	{
@@ -108,9 +239,9 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 
 		// add data 设置数据
 		entry = new ArrayList<Entry>();
-		addData(entry, 1,37.3f);
-		addData(entry,2,37);
-		setData(entry,15, 100);
+		addData( 1,37.3f);
+		addData(2,37);
+		
 
 		mChart.animateX(2500);
 
@@ -141,13 +272,21 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 	
 	//添加一个温度信息
 	//参数：时间 温度
-	private void addData(ArrayList<Entry> entry, int time,float num)
+	private void addData(int time,float num)
 	{
 		entry.add(new Entry(num,time));
 		adapter.add(""+time,""+num);
-		
+		setData(entry,15, 100);
 	}
 	
+	//将获取的信息添加到列表
+	private void addData(String text)
+	{
+		String items[]=text.split(" ");
+		if(items.length>=2)
+		adapter.add(items[0],items[1]);
+		adapter.notifyDataSetChanged();
+	}
 	
 	
 		private void setData(ArrayList<Entry> entry, int count, float range) {

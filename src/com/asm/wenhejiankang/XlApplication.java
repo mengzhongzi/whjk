@@ -2,6 +2,11 @@ package com.asm.wenhejiankang;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import com.asm.wenhejiankang.net.NetContext;
+import com.asm.wenhejiankang.net.impl.NetContextImpl;
+import com.asm.wenhejiankang.model.User;
+import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
+import com.asm.wenhejiankang.net.Net_whjk;
 
 public class XlApplication extends Application
 	{
@@ -11,9 +16,14 @@ public class XlApplication extends Application
 			{
 				
 				super.onCreate();
+				//net = new NetContextImpl();
 			}
 	
-		
+			//网络连接
+		Net_whjk net;
+		//蓝牙数据管理器
+		JKBluetoothManager manager;
+		User user;
 		//保存数据
 		public String saveText(Context context,String name,String value)
 		{
@@ -61,5 +71,35 @@ public class XlApplication extends Application
 				return sp.getBoolean(name, value);
 
 			}
+		
+			public void setUser(User user)
+			{
+				this.user=user;
+			}
+			
+			public User getUser()
+			{
+				return user;
+			}
+		
+		public Net_whjk getNetContext()
+		{
+			return net;
+		}
+		
+		public void setNetContext(Net_whjk net)
+		{
+			this.net=net;
+		}
+		
+		public void setBluetoothManager(JKBluetoothManager manager)
+		{
+			this.manager=manager;
+		}
+		
+		public JKBluetoothManager getBlueManager()
+		{
+			return manager;
+		}
 	
 }

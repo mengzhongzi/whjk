@@ -74,6 +74,10 @@
 			android:name=".SearchActivity"
 			android:theme="@style/test"
 			/>
+		<activity
+			android:name=".AboutActivity"
+			android:theme="@style/test"
+			/>
 		
     </application>
 	<uses-permission android:name="android.permission.INTERNET" />

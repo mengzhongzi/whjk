@@ -6,7 +6,12 @@ import android.widget.TextView;
 import android.widget.ImageButton;
 import android.view.View.OnClickListener;
 import android.view.View;
+/*
+activity父类
+实现自定义标题栏
 
+
+*/
 public class StartActivity extends Activity
 	{
   private TextView titleview;

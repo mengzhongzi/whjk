@@ -8,7 +8,11 @@ import com.xl.view.CheckButton;
 import android.view.View.OnClickListener;
 import android.graphics.drawable.Drawable;
 import android.content.Intent;
+/*
+主菜单界面
 
+
+*/
 public class MainActivity extends StartActivity implements OnClickListener
 	{
    Intent intent;
@@ -72,7 +76,8 @@ public class MainActivity extends StartActivity implements OnClickListener
 					case R.id.item_sendtype:
 						break;
 					case R.id.item_about:
-						
+						intent = new Intent(this,AboutActivity.class);
+						startActivity(intent);
 						break;
 				}
 			}

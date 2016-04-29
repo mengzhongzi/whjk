@@ -30,6 +30,9 @@ public class SearchActivity extends StartActivity implements OnStateChangedListe
 				// TODO: Implement this method
 				manager.connect(list_dev.get(pos));
 				Log.e(TAG,"连接设备 "+list_dev.get(pos).getName());
+				setResult(RESULT_OK);
+
+				finish();
 			}
 		
 		public static final String TAG="SearchActivity";
@@ -78,6 +81,8 @@ public class SearchActivity extends StartActivity implements OnStateChangedListe
 				adapter = new ListAdapter(this);
 				listview.setAdapter(adapter);
 				manager = new JKBluetoothManager(this);
+				XlApplication application=(XlApplication)getApplication();
+				application.setBluetoothManager(manager);
 			}
 			
 		//
@@ -115,11 +120,11 @@ public class SearchActivity extends StartActivity implements OnStateChangedListe
 		血氧仪监听
 		
 		*/
-		public class OnBloud extends OnBloudOxygenDataChangedListener
+		public class OnBloud implements OnBloudOxygenDataChangedListener
 			{
 				public void onDataChanged(byte[] ls, float saturability, int rate, float vqi) 
 				{
-          super.onDataChanged(ls, saturability,rate,vqi);
+          
 				}
 				
 

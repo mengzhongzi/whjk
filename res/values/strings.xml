@@ -5,8 +5,10 @@
     <string name="hello">Hello!</string>
     <string name="app_name">稳和健康</string>
 		
-		
-		
+	<!-- 关于 -->
+	<string name="text_appname">软件名称：</string>
+	<string name="text_versionName">版本：</string>
+	<string name="text_versionCode">版本号：</string>
 		
 	<string name="vector">风的影子</string>
 	
@@ -16,12 +18,16 @@
 	<string name="hint_user">请输入帐号</string>
 	<string name="hint_password">请输入密码</string>
 	<string name="save_userAndPassword">保存用户名和密码</string>
+	<string name="save_password">记住密码</string>
 	<string name="draw_password">显示密码</string>
 	<string name="enter">登录</string>
 	<string name="register">注册</string>
 	<string name="enter_out">注销</string>
-	<string name="forget_the_password">忘记密码</string>
+	<string name="enter_error">登录失败</string>
 	
+	<string name="forget_the_password">忘记密码</string>
+	<!-- 提示 -->
+	<string name="up_error">数据上传失败</string>
 	
 	<!-- 分类-->
 	<string name="xuetangyi">血糖仪</string>
@@ -102,6 +108,9 @@
 	<string name="spo2">SPO2</string>
 	<string name="pr">PR</string>
 	<string name="pi">PI</string>
+	<string name="tab_oxyhemoglobin_saturation">血氧饱和度(SPO2)</string>
+	<string name="tab_pulse_rate">脉率(PR)</string>
+	<string name="tab_perfusion_index">灌注指数(PI)</string>
 	
 		<!-- 对话框相关 -->
 	<string name="ok">确定</string>

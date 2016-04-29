@@ -9,7 +9,9 @@
 	<item type="id" name="edit_password"></item>
 	<item type="id" name="check_draw_password"></item>
 	<item type="id" name="check_save_userAndPassword"></item>
+	<item type="id" name="check_save_password"></item>
 	<item type="id" name="btn_enter"></item>
+	
 	<!-- 注册-->
 	<item type="id" name="btn_register"></item>
 	
@@ -51,6 +53,11 @@
 	<item type="id" name="listview4"></item>
 	<item type="id" name="listview5"></item>
 	<item type="id" name="listview6"></item>
+	
+	<item type="id" name="time"></item>
+	<item type="id" name="prior15"></item>
+	<item type="id" name="next15"></item>
+	
 </resources>
 	
 	

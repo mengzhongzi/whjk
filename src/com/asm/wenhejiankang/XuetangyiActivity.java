@@ -21,11 +21,83 @@ import com.xl.view.MyAdapter3;
 import android.widget.AdapterView;
 import android.widget.Adapter;
 import android.view.View;
+import com.asm.wenhejiankang.net.Net_whjk_Listener;
+import com.asm.wenhejiankang.model.User;
 
+/*
+血糖仪界面
 
+*/
 
-public class XuetangyiActivity extends StartActivity implements OnChartValueSelectedListener,AdapterView.OnItemClickListener
+public class XuetangyiActivity extends StartActivity implements OnChartValueSelectedListener,AdapterView.OnItemClickListener,Net_whjk_Listener
 	{
+
+		@Override
+		public void onEnter(User user)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onError(String text)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onTiWen(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onTiwenError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieya(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieyaError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXietang(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXietangError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieyang(ArrayList<String> list)
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onXieyangError()
+			{
+				// TODO: Implement this method
+			}
+
+		@Override
+		public void onUpError()
+			{
+				// TODO: Implement this method
+			}
+
 
 		@Override
 		public void onItemClick(AdapterView<?> p1, View p2, int pos, long id)

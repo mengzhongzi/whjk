@@ -1,268 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<FrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_height="match_parent"
 	android:layout_width="match_parent"
-	android:background="@color/background"
-	>
+	android:orientation="vertical">
 
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:orientation="vertical">
+	<ScrollView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:background="@color/background">
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_accounts"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_accounts"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_accounts"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_name"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_name"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_name"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_marital_status"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_marital_status"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_marital_status"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_gender"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_gender"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_gender"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_doctor"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_doctor"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_doctor"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_identity_card_number"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_identity_card_number"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_identity_card_number"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_address"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_address"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_address"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_tel"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_tel"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_tel"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_mail"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_mail"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_mail"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_previous_history"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"
-				android:visibility="gone"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_previous_history"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"
+					android:visibility="gone"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_previous_history"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_allergy"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"
-				android:visibility="gone"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_allergy"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"
+					android:visibility="gone"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_allergy"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_contagion"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"
-				android:visibility="gone"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_contagion"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"
+					android:visibility="gone"/>
 
-		<FrameLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:orientation="horizontal"
-			android:gravity="left|center"
-			android:layout_margin="4dp">
+				<TextView
+					android:id="@+id/info_contagion"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-			<Button
-				android:layout_height="50dp"
-				android:text="@string/info_personal_life"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			</FrameLayout>
+
+			<FrameLayout
+				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
-				android:layout_weight="1.0"
-				android:layout_gravity="center"
+				android:orientation="horizontal"
 				android:gravity="left|center"
-				android:background="@drawable/list_item0"
-				android:visibility="gone"/>
+				android:layout_margin="4dp">
 
-		</FrameLayout>
+				<Button
+					android:layout_height="50dp"
+					android:text="@string/info_personal_life"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_weight="1.0"
+					android:layout_gravity="center"
+					android:gravity="left|center"
+					android:background="@drawable/list_item0"
+					android:visibility="gone"/>
 
-	</LinearLayout>
+				<TextView
+					android:id="@+id/info_personal_life"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_gravity="right|center"/>
 
-</ScrollView>
+			</FrameLayout>
+
+		</LinearLayout>
+
+	</ScrollView>
+	<include layout="@layout/progress" />
+</FrameLayout>
 

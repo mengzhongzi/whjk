@@ -12,7 +12,7 @@
 
 		<TextView
 			android:layout_height="wrap_content"
-			android:text="@string/time"
+			android:text="@string/serial_number"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_weight="1.0"
@@ -20,7 +20,7 @@
 
 		<TextView
 			android:layout_height="wrap_content"
-			android:text="@string/serial_number"
+			android:text="@string/time"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_weight="1.0"
@@ -34,6 +34,13 @@
 			android:layout_weight="1.0"
 			android:gravity="center"/>
 
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:gravity="center"/>
+
 	</LinearLayout>
 
 	<FrameLayout
@@ -42,6 +49,7 @@
 		android:layout_weight="1.0">
 
 		<ListView
+			android:id="@+id/facility_listview"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"/>
 
@@ -74,6 +82,7 @@
 		android:orientation="horizontal">
 
 		<Button
+			android:id="@+id/facility_search"
 			android:layout_height="wrap_content"
 			android:text="@string/search"
 			android:layout_width="match_parent"
@@ -82,6 +91,7 @@
 			android:background="@drawable/button_blue_small"/>
 
 		<Button
+			android:id="@+id/facility_empty"
 			android:layout_height="wrap_content"
 			android:text="@string/empty"
 			android:layout_width="match_parent"

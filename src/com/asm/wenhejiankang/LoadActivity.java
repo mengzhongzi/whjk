@@ -7,7 +7,10 @@ import android.net.*;
 import android.os.*;
 import android.view.*;
 import android.widget.*;
+/*
+logo信息界面 显示启动图
 
+*/
 
 public class LoadActivity extends Activity implements Runnable
 {

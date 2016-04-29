@@ -6,10 +6,10 @@ package com.asm.wenhejiankang.bluetooth;
  * rate 脉率
  * vqi 灌注指数
  */
-public class OnBloudOxygenDataChangedListener 
+public interface OnBloudOxygenDataChangedListener 
 	{
-		public void onDataChanged(byte[] ls, float saturability, int rate, float vqi) {
+		public void onDataChanged(byte[] ls, float saturability, int rate, float vqi) ;
 
-			}
+			
 
 	}

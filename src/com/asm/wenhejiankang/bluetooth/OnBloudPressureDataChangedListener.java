@@ -6,8 +6,8 @@ package com.asm.wenhejiankang.bluetooth;
 	 * lowest 低压
 	 * rate 心律
 	 */
-	public class OnBloudPressureDataChangedListener {
-		public void onDataChanged(int highest, int lowest, int rate) {
+	public interface OnBloudPressureDataChangedListener {
+		public void onDataChanged(int highest, int lowest, int rate) ;
 
-		}
+		
 	}

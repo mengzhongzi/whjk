@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:orientation="vertical"
-	android:gravity="center">
-
-	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:src="@drawable/ic_launcher"/>
-
-	<EditText
-		android:id="@id/edit_user"
-		android:hint="@string/hint_user"
-		android:layout_height="wrap_content"
-		android:inputType="textPersonName"
-		android:ems="10"
-		android:layout_width="match_parent"
-		android:drawableLeft="@drawable/ic_user"
-		android:singleLine="true"
-		android:layout_margin="10dp"/>
-
-	<EditText
-		android:id="@id/edit_password"
-		android:hint="@string/hint_password"
-		android:layout_height="wrap_content"
-		android:ems="10"
-		android:inputType="textPassword"
-		android:layout_width="match_parent"
-		android:drawableLeft="@drawable/ic_possword"
-		android:singleLine="true"
-		android:layout_margin="10dp"/>
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
 
 	<LinearLayout
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
 		android:gravity="center">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_launcher"/>
+
+		<EditText
+			android:id="@id/edit_user"
+			android:hint="@string/hint_user"
+			android:layout_height="wrap_content"
+			android:inputType="textPersonName"
+			android:ems="10"
+			android:layout_width="match_parent"
+			android:drawableLeft="@drawable/ic_user"
+			android:singleLine="true"
+			android:layout_margin="10dp"/>
+
+		<EditText
+			android:id="@id/edit_password"
+			android:hint="@string/hint_password"
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:inputType="textPassword"
+			android:layout_width="match_parent"
+			android:drawableLeft="@drawable/ic_possword"
+			android:singleLine="true"
+			android:layout_margin="10dp"/>
 
 		<LinearLayout
 			android:layout_height="wrap_content"
@@ -45,8 +43,29 @@
 			android:orientation="horizontal"
 			android:gravity="center">
 
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:orientation="horizontal"
+				android:gravity="center">
+
+				<CheckBox
+					android:id="@id/check_save_password"
+					android:layout_weight="1.0"
+					style="@style/LoginCheckbox"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="@string/save_password"
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:layout_width="wrap_content"/>
+
+			</LinearLayout>
+
 			<CheckBox
-				android:id="@id/check_save_userAndPassword"
+				android:id="@id/check_draw_password"
 				android:layout_weight="1.0"
 				style="@style/LoginCheckbox"
 				android:layout_height="wrap_content"
@@ -54,40 +73,42 @@
 
 			<TextView
 				android:layout_height="wrap_content"
-				android:text="@string/save_userAndPassword"
+				android:text="@string/draw_password"
 				android:textAppearance="?android:attr/textAppearanceSmall"
 				android:layout_width="wrap_content"/>
 
 		</LinearLayout>
 
-		<LinearLayout
+		<Button
+			android:id="@id/btn_enter"
 			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:orientation="horizontal"
-			android:gravity="center"/>
+			android:text="@string/enter"
+			android:layout_width="240dp"
+			android:layout_margin="5dp"/>
 
-		<CheckBox
-			android:id="@id/check_draw_password"
-			android:layout_weight="1.0"
-			
-			style="@style/LoginCheckbox"
+		<Button
+			android:id="@id/btn_cancel"
 			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"/>
-
-		<TextView
-			android:layout_height="wrap_content"
-			android:text="@string/draw_password"
-			android:textAppearance="?android:attr/textAppearanceSmall"
-			android:layout_width="wrap_content"/>
+			android:text="@string/cancel"
+			android:layout_width="240dp"
+			android:layout_margin="5dp"/>
 
 	</LinearLayout>
 
-	<Button
-		android:id="@id/btn_enter"
+	<LinearLayout
 		android:layout_height="wrap_content"
-		android:text="@string/enter"
-		android:background="@drawable/button_blue"
-		android:layout_width="240dp"/>
+		android:layout_width="wrap_content"
+		android:orientation="vertical"
+		android:layout_gravity="center">
 
-</LinearLayout>
+		<ProgressBar
+			android:id="@+id/enter_progress"
+			android:layout_height="wrap_content"
+			style="?android:attr/progressBarStyleLarge"
+			android:layout_width="wrap_content"
+			android:visibility="gone"/>
+
+	</LinearLayout>
+
+</FrameLayout>
 

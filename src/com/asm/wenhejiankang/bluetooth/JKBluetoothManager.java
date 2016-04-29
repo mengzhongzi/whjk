@@ -78,9 +78,9 @@ public class JKBluetoothManager {
 		mReceiver = new BlueToothReceiver();
 		
 		//stateChangedListener = new OnStateChangedListener();
-		bloudOxygenDataChangedListener = new OnBloudOxygenDataChangedListener();
-		glycemicIndexDataChangedListener = new OnGlycemicIndexDataChangedListener();
-		bloudPressureDataChangedListener = new OnBloudPressureDataChangedListener();
+		bloudOxygenDataChangedListener = new onBindOxygen();
+		glycemicIndexDataChangedListener = new onGlycem();
+		bloudPressureDataChangedListener = new onBlound();
 		animalHeatDataChangedListener = new OnAnimalHeatDataChangedListener();
 	}
 	
@@ -97,9 +97,9 @@ public class JKBluetoothManager {
 			devices = new ArrayList<BluetoothDevice>();
 			mReceiver = new BlueToothReceiver();
 			//stateChangedListener = new OnStateChangedListener();
-			bloudOxygenDataChangedListener = new OnBloudOxygenDataChangedListener();
-			glycemicIndexDataChangedListener = new OnGlycemicIndexDataChangedListener();
-			bloudPressureDataChangedListener = new OnBloudPressureDataChangedListener();
+			bloudOxygenDataChangedListener = new onBindOxygen();
+			glycemicIndexDataChangedListener = new onGlycem();
+			bloudPressureDataChangedListener = new onBlound();
 			animalHeatDataChangedListener = new OnAnimalHeatDataChangedListener();
 			
 			
@@ -333,11 +333,41 @@ public class JKBluetoothManager {
 	}
 
 
+		class onBindOxygen implements OnBloudOxygenDataChangedListener
+			{
 
+				@Override
+				public void onDataChanged(byte[] ls, float saturability, int rate, float vqi)
+					{
+						// TODO: Implement this method
+					}
+				
+			
+		}
 
+		class onGlycem implements OnGlycemicIndexDataChangedListener
+			{
 
+				@Override
+				public void onDataChanged(float gi)
+					{
+						// TODO: Implement this method
+					}
+				
+			
+		}
 
+	class onBlound implements	OnBloudPressureDataChangedListener
+			{
 
+				@Override
+				public void onDataChanged(int highest, int lowest, int rate)
+					{
+						// TODO: Implement this method
+					}
+				
+		
+	}
 
 
 	class ConnectThread extends Thread {
