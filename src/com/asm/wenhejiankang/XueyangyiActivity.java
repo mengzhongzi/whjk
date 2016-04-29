@@ -185,7 +185,7 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 				mChart = (LineChart) findViewById(R.id.chart1);
 				mChart.setOnChartValueSelectedListener(this);
 
-				mChart.setUnit("℃");
+				//mChart.setUnit("℃");
 				//mChart.setDrawUnitsInChart(true);
 
 				// if enabled, the chart will always start at zero on the y-axis
@@ -295,6 +295,8 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 				return date;
 			}
 
+			//血氧饱和度(%) 脉率(bpm) 灌注指数(%)
+			
 		private void setData(ArrayList<Entry> entry, int count, float range) {
 
         ArrayList<String> xVals = new ArrayList<String>();

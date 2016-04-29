@@ -170,14 +170,14 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 			}
 
 
-
+//高压mmHg 低压mmHg 脉率(次/分钟)
 
 		private void onSetChart()
 			{
 				mChart = (LineChart) findViewById(R.id.chart1);
 				mChart.setOnChartValueSelectedListener(this);
 
-				mChart.setUnit("℃");
+				//mChart.setUnit("℃");
 				//mChart.setDrawUnitsInChart(true);
 
 				// if enabled, the chart will always start at zero on the y-axis

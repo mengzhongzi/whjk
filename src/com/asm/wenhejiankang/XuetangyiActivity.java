@@ -199,7 +199,7 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 				mChart = (LineChart) findViewById(R.id.chart1);
 				mChart.setOnChartValueSelectedListener(this);
 
-				mChart.setUnit("℃");
+				//mChart.setUnit("℃");
 				//mChart.setDrawUnitsInChart(true);
 
 				// if enabled, the chart will always start at zero on the y-axis
@@ -335,7 +335,7 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 				 */
 
         // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(entry, "体温");
+        LineDataSet set1 = new LineDataSet(entry, "浓度(mmol/L)");
         set1.setColor(ColorTemplate.getHoloBlue());
         set1.setCircleColor(0xff60a0f0);
         set1.setLineWidth(DisplayUtil.dip2px(this,1));
