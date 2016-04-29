@@ -226,8 +226,8 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 				entry1 = new ArrayList<Entry>();
 				entry2 = new ArrayList<Entry>();
 				entry3 = new ArrayList<Entry>();
-				addData( 1,37.3f,80,120);
-				addData(2,37,80,120);
+				//addData( 1,37.3f,80,120);
+				//addData(2,37,80,120);
 				setData(entry1,entry2,entry3,15, 100);
 
 				mChart.animateX(2500);
