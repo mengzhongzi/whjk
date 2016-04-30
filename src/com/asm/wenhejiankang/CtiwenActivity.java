@@ -112,7 +112,8 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 						startActivity(intent);
 						break;
 					case R.id.facility_empty:
-						
+						adapter.clear();
+						adapter.notifyDataSetChanged();
 						break;
 					default:
 						p1.setVisibility(4);

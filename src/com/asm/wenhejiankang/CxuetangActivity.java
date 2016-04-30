@@ -118,6 +118,7 @@ public class CxuetangActivity extends StartActivity implements OnClickListener, 
 					case R.id.facility_empty:
 						adapter.clear();
 						adapter.notifyDataSetChanged();
+						break;
 					default:
 						p1.setVisibility(4);
 						Xietang_item item=list.get(p1.getId());
