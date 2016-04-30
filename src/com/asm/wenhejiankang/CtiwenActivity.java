@@ -11,14 +11,49 @@ import android.content.Intent;
 import com.asm.wenhejiankang.net.Net_whjk_Listener;
 import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.net.Net_whjk;
+import com.asm.wenhejiankang.bluetooth.OnAnimalHeatDataChangedListener;
+import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
 /*
 
 查体温
 连接体温计
 
 */
-public class CtiwenActivity extends StartActivity implements OnClickListener,Net_whjk_Listener
+
+public class CtiwenActivity extends StartActivity implements OnClickListener,Net_whjk_Listener,OnAnimalHeatDataChangedListener
 	{
+		/*
+		 * tp 温度
+		 * temMetric 温度度量
+		 * 		0 摄氏度 
+		 * 		1华氏度
+		 * temType 温度类型
+		 * 		0人体温度
+		 * 		1物体温度
+		 * 		2环境温度
+		 * state 状态
+		 * 		0正常
+		 * 		1测量温度过低
+		 * 		2测量温度过高
+		 * 		3环境温度过低
+		 * 		4环境温度过高
+		 * 		5EEPROM出错
+		 * 		6传感器出错
+		 */
+		@Override
+		public void onDataChanged(float tp, int temMetric, int temType, int state)
+			{
+				//
+				switch(temMetric)
+				{
+					case 0:
+						text.setText(""+tp);
+						break;
+					case 1:
+						
+				}
+			}
+		
 
 		@Override
 		public void onUp()
@@ -107,13 +142,20 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 					case R.id.item_img:
 						
 						break;
-					case R.id.facility_search:
+					case R.id.btn_search:
 						intent = new Intent(this,SearchActivity.class);
 						startActivity(intent);
 						break;
-					case R.id.facility_empty:
+					case R.id.btn_empty:
 						adapter.clear();
 						adapter.notifyDataSetChanged();
+						break;
+					case R.id.btn_collect:
+						try
+							{
+								debug_add(new Date(),Float.parseFloat(text.getText().toString()));
+							}
+						catch (NumberFormatException e) {}
 						break;
 					default:
 						p1.setVisibility(4);
@@ -126,11 +168,13 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 		LinearLayout layout_search;
     ListView listview;
 		MyAdapter adapter;
-		Button btn_search,btn_empty;
+		Button btn_search,btn_empty,btn_coll;
+		TextView text;
 		XlApplication application;
 		//数据链接
 		Net_whjk net;
-		
+		//蓝牙数据管理器
+		JKBluetoothManager manager;
 		ArrayList<Tiwen_item> list;
 		
 		@Override
@@ -153,12 +197,16 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 				layout_search=(LinearLayout)findViewById(R.id.layout_search);
 				
 				listview = (ListView) findViewById(R.id.facility_listview);
-				btn_search=(Button)findViewById(R.id.facility_search);
-				btn_empty=(Button)findViewById(R.id.facility_empty);
+				btn_search=(Button)findViewById(R.id.btn_search);
+				btn_empty=(Button)findViewById(R.id.btn_empty);
+				btn_coll=(Button)findViewById(R.id.btn_collect);
 				btn_search.setOnClickListener(this);
 				btn_empty.setOnClickListener(this);
+				btn_coll.setOnClickListener(this);
+				text = (TextView)findViewById(R.id.tab_temperature);
 				application = (XlApplication)getApplication();
 				net = application.getNetContext();
+				if(net==null)finish();
 				net.setListener(this);
 				
 				list = new ArrayList<Tiwen_item>();
@@ -181,7 +229,8 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 		//开始搜索
 		void searchStart()
 			{
-				layout_search.setVisibility(View.VISIBLE);
+				Intent intent = new Intent(this, SearchActivity.class);
+				startActivityForResult(intent,REQUEST_EX);
 			}
 
 		//关闭搜索
@@ -189,7 +238,27 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 			{
 				layout_search.setVisibility(View.GONE);
 			}
-		
+			
+		int REQUEST_EX =100;
+			
+		//搜索界面返回
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+				// TODO: Implement this method
+				super.onActivityResult(requestCode, resultCode, intent);
+				if(requestCode==REQUEST_EX)
+					{
+						switch(resultCode)
+							{
+								case RESULT_OK:
+									manager = application.getBlueManager();
+									manager.setOnAnimalHeatDataChangedListener(this);
+									break;
+							}
+					}
+
+
+			}
 	
 			public class Tiwen_item
 			{

@@ -18,8 +18,10 @@ package com.asm.wenhejiankang.bluetooth;
 	 * 		5EEPROM出错
 	 * 		6传感器出错
 	 */
-	public class OnAnimalHeatDataChangedListener {
-		public void onDataChanged(float tp, int temMetric,int temType,int state) {
+	public interface OnAnimalHeatDataChangedListener
+	{
+		
+		public void onDataChanged(float tp, int temMetric,int temType,int state) ;
 			
-		}
+		
 	}

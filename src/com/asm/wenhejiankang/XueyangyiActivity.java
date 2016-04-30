@@ -274,7 +274,7 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 					adapter.add((adapter.getCount()+1)+" "+ text);
 				adapter.notifyDataSetChanged();
 				setData(entry1,entry2,entry3,15, 100);
-				
+				mChart.invalidate();
 				Log.e("xieyang","添加一行数据："+text);
 			}
 			

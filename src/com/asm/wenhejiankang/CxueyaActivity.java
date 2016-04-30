@@ -12,6 +12,7 @@ import android.content.Intent;
 import com.asm.wenhejiankang.net.Net_whjk_Listener;
 import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.net.Net_whjk;
+import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
 /*
 查血压
 搜索连接血压仪
@@ -96,10 +97,14 @@ public class CxueyaActivity extends StartActivity implements OnClickListener, On
 
 		private static final int REQUEST_EX = 100;
 
+		//血压仪监听
 		@Override
 		public void onDataChanged(int highest, int lowest, int rate)
 			{
 				// TODO: Implement this method
+				text_high_pressure.setText(""+highest);
+				text_low_tension.setText(""+lowest);
+				text_pulse_rate2.setText(""+rate);
 			}
 
 
@@ -110,12 +115,19 @@ public class CxueyaActivity extends StartActivity implements OnClickListener, On
 				switch(p1.getId())
 				{
 					
-					case R.id.facility_search:
+					case R.id.btn_search:
 						searchDevice();
 						break;
-					case R.id.facility_empty:
+					case R.id.btn_empty:
 						adapter.clear();
 						adapter.notifyDataSetChanged();
+						break;
+					case R.id.btn_collect:
+						try
+							{
+								debug_add(new Date(), Float.parseFloat(text_high_pressure.getText().toString()), Float.parseFloat(text_low_tension.getText().toString()), Float.parseFloat(text_pulse_rate2.getText().toString()));
+							}
+						catch (NumberFormatException e) {}
 						break;
 					default:
 						p1.setVisibility(4);
@@ -135,12 +147,15 @@ public class CxueyaActivity extends StartActivity implements OnClickListener, On
 			}
 			
 		LinearLayout layout_search;
-		Button btn_search,btn_empty;
+		Button btn_search,btn_empty,btn_coll;
+		TextView text_high_pressure, text_low_tension, text_pulse_rate2;
 		ListView listview;
 		MyAdapter adapter;
 		XlApplication application;
 		//数据链接
 		Net_whjk net;
+		//蓝牙数据管理器
+		JKBluetoothManager manager;
 		
 		ArrayList<Xieya_item> list;
 		
@@ -153,12 +168,22 @@ public class CxueyaActivity extends StartActivity implements OnClickListener, On
 				setContentView(R.layout.facility_xueyayi);
 				layout_search=(LinearLayout)findViewById(R.id.layout_search);
         listview = (ListView)findViewById(R.id.facility_listview);
-				btn_search = (Button)findViewById(R.id.facility_search);
-				btn_empty =(Button)findViewById(R.id.facility_empty);
+				btn_search = (Button)findViewById(R.id.btn_search);
+				btn_empty =(Button)findViewById(R.id.btn_empty);
+				btn_coll=(Button)findViewById(R.id.btn_collect);
 			btn_search.setOnClickListener(this);
 			btn_empty.setOnClickListener(this);
+			btn_coll.setOnClickListener(this);
+				text_high_pressure = (TextView)findViewById(R.id.tab_high_pressure);
+				text_low_tension = (TextView)findViewById(R.id.tab_low_tension);
+				text_pulse_rate2 = (TextView)findViewById(R.id.tab_pulse_rate2);
+				
+			
+			
 				application = (XlApplication)getApplication();
 				net=application.getNetContext();
+				if(net==null)finish();
+				net.setListener(this);
 			list=new ArrayList<Xieya_item>();
 			
 				adapter = new MyAdapter(this);
@@ -194,7 +219,24 @@ void searchDevice()
 			{
 				layout_search.setVisibility(View.GONE);
 			}
-			
+		//搜索界面返回
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+				// TODO: Implement this method
+				super.onActivityResult(requestCode, resultCode, intent);
+				if(requestCode==REQUEST_EX)
+					{
+						switch(resultCode)
+							{
+								case RESULT_OK:
+									manager = application.getBlueManager();
+									manager.setOnBloudPressureDataChangedListener(this);
+									break;
+							}
+					}
+
+
+			}
 			class Xieya_item
 			{
 				public Date date;

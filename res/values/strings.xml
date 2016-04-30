@@ -111,6 +111,10 @@
 	<string name="tab_oxyhemoglobin_saturation">血氧饱和度(SPO2)</string>
 	<string name="tab_pulse_rate">脉率(PR)</string>
 	<string name="tab_perfusion_index">灌注指数(PI)</string>
+	<string name="tab_high_pressure">高压</string>
+	<string name="tab_low_tension">低压</string>
+	<string name="tab_pulse_rate2">脉率</string>
+	
 	
 		<!-- 对话框相关 -->
 	<string name="ok">确定</string>

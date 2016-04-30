@@ -12,6 +12,7 @@ import android.content.Intent;
 import com.asm.wenhejiankang.net.Net_whjk_Listener;
 import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.net.Net_whjk;
+import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
 /*
 查血糖
 搜索设备并显示设备
@@ -96,10 +97,12 @@ public class CxuetangActivity extends StartActivity implements OnClickListener, 
 
 		private static final int REQUEST_EX = 100;
 
+		//监听血糖仪数据
 		@Override
 		public void onDataChanged(float gi)
 			{
-				// TODO: Implement this method
+				text.setText(""+gi);
+				//debug_add(new Date(),Float.parseFloat(text.getText().toString()));
 			}
 
 
@@ -112,12 +115,19 @@ public class CxuetangActivity extends StartActivity implements OnClickListener, 
 					case R.id.item_img:
 						
 						break;
-					case R.id.facility_search:
+					case R.id.btn_search:
 						searchStart();
 						break;
-					case R.id.facility_empty:
+					case R.id.btn_empty:
 						adapter.clear();
 						adapter.notifyDataSetChanged();
+						break;
+					case R.id.btn_collect:
+						try
+							{
+								debug_add(new Date(),Float.parseFloat(text.getText().toString()));
+							}
+						catch (NumberFormatException e) {}
 						break;
 					default:
 						p1.setVisibility(4);
@@ -137,14 +147,16 @@ public class CxuetangActivity extends StartActivity implements OnClickListener, 
 			}
 		
 LinearLayout layout_search;
-Button btn_search,btn_empty;
+Button btn_search,btn_empty,btn_coll;
+TextView text;
 ListView listview;
 MyAdapter adapter;
 		XlApplication application;
 		ArrayList<Xietang_item> list;
 		//数据链接
 		Net_whjk net;
-
+//蓝牙数据管理器
+		JKBluetoothManager manager;
 		@Override
 		public void onContentView()
 			{
@@ -153,13 +165,17 @@ MyAdapter adapter;
 				setContentView(R.layout.facility_xuetangyi);
 				layout_search=(LinearLayout)findViewById(R.id.layout_search);
 				listview = (ListView)findViewById(R.id.facility_listview);
-				btn_search = (Button)findViewById(R.id.facility_search);
-				btn_empty = (Button)findViewById(R.id.facility_empty);
-		
+				btn_search = (Button)findViewById(R.id.btn_search);
+				btn_empty = (Button)findViewById(R.id.btn_empty);
+		  btn_coll = (Button)findViewById(R.id.btn_collect);
+				text = (TextView)findViewById(R.id.tab_concentration);
+			
 				btn_search.setOnClickListener(this);
 				btn_empty.setOnClickListener(this);
+				btn_coll.setOnClickListener(this);
 				application = (XlApplication)getApplication();
 				net=application.getNetContext();
+				if(net==null)finish();
 				net.setListener(this);
 				list=new ArrayList<Xietang_item>();
 				adapter = new MyAdapter(this);
@@ -195,7 +211,28 @@ MyAdapter adapter;
 			 {
 				 layout_search.setVisibility(View.GONE);
 			 }
-	
+
+		//int REQUEST_EX =100;
+
+		//搜索界面返回
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+				// TODO: Implement this method
+				super.onActivityResult(requestCode, resultCode, intent);
+				if(requestCode==REQUEST_EX)
+					{
+						switch(resultCode)
+							{
+								case RESULT_OK:
+									manager = application.getBlueManager();
+									manager.setOnGlycemicIndexDataChangedListener(this);
+									break;
+							}
+					}
+
+
+			}
+		
 	class Xietang_item
 	{
 		public Date date;

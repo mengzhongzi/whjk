@@ -307,7 +307,7 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 		}
 		adapter.notifyDataSetChanged();
 		setData(entry,15, 100);
-		
+		mChart.invalidate();
 				
 		Log.e("添加体温数据",text);
 	}

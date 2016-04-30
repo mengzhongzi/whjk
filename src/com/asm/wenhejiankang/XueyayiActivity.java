@@ -289,6 +289,8 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 					adapter.add(""+(adapter.getCount()+1)+" "+ text);
 				adapter.notifyDataSetChanged();
 				setData(entry1,entry2,entry3, 15, 300);
+				mChart.invalidate();
+				
 				Log.e("添加血压数据",text);
 			}
 

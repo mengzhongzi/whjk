@@ -81,7 +81,7 @@ public class JKBluetoothManager {
 		bloudOxygenDataChangedListener = new onBindOxygen();
 		glycemicIndexDataChangedListener = new onGlycem();
 		bloudPressureDataChangedListener = new onBlound();
-		animalHeatDataChangedListener = new OnAnimalHeatDataChangedListener();
+		//animalHeatDataChangedListener = new OnAnimalHeatDataChangedListener();
 	}
 	
 		public JKBluetoothManager(OnStateChangedListener listener)
@@ -100,7 +100,7 @@ public class JKBluetoothManager {
 			bloudOxygenDataChangedListener = new onBindOxygen();
 			glycemicIndexDataChangedListener = new onGlycem();
 			bloudPressureDataChangedListener = new onBlound();
-			animalHeatDataChangedListener = new OnAnimalHeatDataChangedListener();
+			//animalHeatDataChangedListener = new OnAnimalHeatDataChangedListener();
 			
 			
 			
@@ -112,6 +112,13 @@ public class JKBluetoothManager {
 		public void setOnStateChangedListener(OnStateChangedListener sc) {
 				stateChangedListener = sc;
 			}
+			
+			//设置温度计监听
+		public void setOnAnimalHeatDataChangedListener(OnAnimalHeatDataChangedListener lis)
+		{
+			this.animalHeatDataChangedListener=lis;
+		}
+			
 		/*
 		 * 设置血氧仪监听器
 		 */
@@ -479,6 +486,7 @@ public class JKBluetoothManager {
 								sb.insert(sb.length() - 2, ".");
 								float f = Float.valueOf(sb.toString());
 								byte ss=data[6];
+								if(animalHeatDataChangedListener!=null)
 								animalHeatDataChangedListener.onDataChanged(f,(int)data[7],binToDecimal(data[6]+""+data[5]),binToDecimal(data[4]+""+data[3]+""+data[2]));
 							}
 						}

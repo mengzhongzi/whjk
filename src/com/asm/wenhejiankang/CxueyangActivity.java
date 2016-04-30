@@ -120,6 +120,11 @@ public class CxueyangActivity extends StartActivity implements OnClickListener, 
 					startActivity(intent);
 						break;
 					case R.id.btn_collect: //采集
+						try
+							{
+								debug_add(new Date(),Float.parseFloat( text_oxyhemoglobin_saturation.getText().toString()),Float.parseFloat( text_pulse_rate.getText().toString()), Float.parseFloat( text_perfusion_index.getText().toString()));
+							}
+						catch (NumberFormatException e) {}
 						break;
 					case R.id.btn_empty: //清空
 					  adapter.clear();

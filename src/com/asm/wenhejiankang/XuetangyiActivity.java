@@ -312,7 +312,7 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 					}
 				adapter.notifyDataSetChanged();
 				setData(entry,15, 100);
-				
+				mChart.invalidate();
 				Log.e("添加血糖数据",text);
 			}
 
