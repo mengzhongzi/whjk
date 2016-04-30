@@ -171,6 +171,7 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 				onSetChart();
 				application=(XlApplication)getApplication();
 				net=application.getNetContext();
+				if(net==null)finish();
 				net.setListener(this);
 				nextdate=new Date();
 				update=getNextDay(nextdate);
@@ -259,22 +260,26 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 
 		//添加一个温度信息
 		//参数：时间 温度
-		private void addData( int time,float num,float num2,float num3)
+		private void addData( String time,float num,float num2,float num3)
 			{
-				entry1.add(new Entry(num,time));
-				entry2.add(new Entry(num2,time));
-				entry3.add(new Entry(num3,time));
-				adapter.add(""+adapter.getCount()+" "+time+" "+num+" "+num2+" "+num3);
-
+				entry1.add(new Entry(num,adapter.getCount()));
+				entry2.add(new Entry(num2,adapter.getCount()));
+				entry3.add(new Entry(num3,adapter.getCount()));
+				adapter.add(""+(adapter.getCount()+1)+" "+time+" "+num+" "+num2+" "+num3);
+				setData(entry1,entry2,entry3,15, 100);
+				mChart.invalidate();
+				adapter.notifyDataSetChanged();
+				
 			}
 		private void addData(String text)
 			{
 				String items[]=text.split(" ");
 				if(items.length>=2)
-					adapter.add((adapter.getCount()+1)+" "+ text);
-				adapter.notifyDataSetChanged();
-				setData(entry1,entry2,entry3,15, 100);
-				mChart.invalidate();
+				{
+					addData(items[0],Float.parseFloat(items[1]),Float.parseFloat(items[2]),Float.parseFloat(items[3]));
+				}
+				//setData(entry1,entry2,entry3,15, 100);
+				
 				Log.e("xieyang","添加一行数据："+text);
 			}
 			

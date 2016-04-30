@@ -162,6 +162,7 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				text_time.setOnClickListener(this);
 				application=(XlApplication)getApplication();
 				net=application.getNetContext();
+				if(net==null)finish();
 				net.setListener(this);
 				nextdate=new Date();
 				nextdate.setTime(System.currentTimeMillis());
@@ -273,24 +274,32 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 
 		//添加一个温度信息
 		//参数：时间 温度
-		private void addData(int time,float num1,float num2,float num3)
+		private void addData(String time,float num1,float num2,float num3)
 			{
-				entry1.add(new Entry(num1,time));
-				entry2.add(new Entry(num2,time));
-				entry3.add(new Entry(num3,time));
-				adapter.add(""+adapter.getCount()+" "+ time+" "+num1+" "+num2+" "+num3);
-
+				entry1.add(new Entry(num1,adapter.getCount()));
+				entry2.add(new Entry(num2,adapter.getCount()));
+				entry3.add(new Entry(num3,adapter.getCount()));
+				adapter.add(""+(adapter.getCount()+1)+" "+ time+" "+num1+" "+num2+" "+num3);
+				adapter.notifyDataSetChanged();
+				setData(entry1,entry2,entry3, 15, 300);
+				mChart.invalidate();
 			}
 
 		private void addData(String text)
 			{
 				String items[]=text.split(" ");
 				if(items.length>=2)
-					adapter.add(""+(adapter.getCount()+1)+" "+ text);
-				adapter.notifyDataSetChanged();
-				setData(entry1,entry2,entry3, 15, 300);
-				mChart.invalidate();
+				{
+				//adapter.add(""+(adapter.getCount()+1)+" "+ text);
 				
+				//setData(entry1,entry2,entry3, 15, 300);
+					try
+						{
+							addData(items[0],Float.parseFloat(items[1]),Float.parseFloat(items[2]),Float.parseFloat(items[3]));
+						}
+					catch (NumberFormatException e) {}
+
+				}
 				Log.e("添加血压数据",text);
 			}
 
