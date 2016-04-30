@@ -9,7 +9,7 @@ import android.view.View;
 /*
 activity父类
 实现自定义标题栏
-
+风的影子
 
 */
 public class StartActivity extends Activity

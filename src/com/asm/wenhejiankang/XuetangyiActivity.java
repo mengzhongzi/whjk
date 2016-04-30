@@ -33,7 +33,7 @@ import com.xl.game.tool.Log;
 
 /*
 血糖仪界面
-
+风的影子
 */
 
 public class XuetangyiActivity extends StartActivity implements OnChartValueSelectedListener,AdapterView.OnItemClickListener,Net_whjk_Listener,OnClickListener

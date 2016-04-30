@@ -6,7 +6,10 @@ import com.asm.wenhejiankang.net.impl.NetContextImpl;
 import android.os.Handler;
 import android.os.Message;
 import java.util.Date;
-
+/*
+通过线程完成网络连接
+风的影子
+*/
 public class Net_whjk extends Handler
 {
 		public void handleMessage(android.os.Message msg) 

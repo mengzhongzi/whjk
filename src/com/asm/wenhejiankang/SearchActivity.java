@@ -19,7 +19,7 @@ import com.asm.wenhejiankang.bluetooth.OnBloudOxygenDataChangedListener;
 /*
 
 设备搜索界面
-
+风的影子
 */
 public class SearchActivity extends StartActivity implements OnStateChangedListener , AdapterView.OnItemClickListener
 	{

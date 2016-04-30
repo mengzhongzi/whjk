@@ -11,7 +11,7 @@ import android.content.Intent;
 /*
 主菜单界面
 
-
+风的影子
 */
 public class MainActivity extends StartActivity implements OnClickListener
 	{

@@ -17,7 +17,7 @@ import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
 
 查体温
 连接体温计
-
+风的影子
 */
 
 public class CtiwenActivity extends StartActivity implements OnClickListener,Net_whjk_Listener,OnAnimalHeatDataChangedListener

@@ -5,7 +5,7 @@ import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.net.Net_whjk;
 /*
 个人信息界面
-
+风的影子
 */
 public class DetailsActivity extends StartActivity
 	{

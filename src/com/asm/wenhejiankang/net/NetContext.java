@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import com.asm.wenhejiankang.model.User;
+/*
+网络数据获取接口
 
+*/
 public interface NetContext
 {
 	

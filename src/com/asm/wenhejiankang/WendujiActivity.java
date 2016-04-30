@@ -29,6 +29,10 @@ import java.util.Calendar;
 import android.widget.TextView;
 import com.xl.game.tool.Log;
 
+/*
+温度统计
+风的影子
+*/
 
 public class WendujiActivity extends StartActivity implements OnChartValueSelectedListener,Net_whjk_Listener,OnClickListener
 	{

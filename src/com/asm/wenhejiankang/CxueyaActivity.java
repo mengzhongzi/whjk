@@ -16,7 +16,7 @@ import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
 /*
 查血压
 搜索连接血压仪
-
+风的影子
 */
 public class CxueyaActivity extends StartActivity implements OnClickListener, OnBloudPressureDataChangedListener,Net_whjk_Listener
 	{

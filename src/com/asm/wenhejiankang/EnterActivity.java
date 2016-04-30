@@ -26,7 +26,7 @@ import com.asm.wenhejiankang.net.Net_whjk;
 /*
 
 登录
-
+风的影子
 */
 public class EnterActivity extends Activity implements CompoundButton.OnCheckedChangeListener,OnClickListener,Net_whjk_Listener
 	{

@@ -32,6 +32,7 @@ import com.xl.game.tool.Log;
 /*
 
 血氧仪记录
+风的影子
 */
 
 public class XueyangyiActivity extends StartActivity implements OnChartValueSelectedListener,Net_whjk_Listener,OnClickListener

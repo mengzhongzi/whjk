@@ -9,7 +9,7 @@ import android.view.*;
 import android.widget.*;
 /*
 logo信息界面 显示启动图
-
+风的影子
 */
 
 public class LoadActivity extends Activity implements Runnable

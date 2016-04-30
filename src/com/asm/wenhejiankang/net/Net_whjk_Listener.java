@@ -1,7 +1,10 @@
 package com.asm.wenhejiankang.net;
 import com.asm.wenhejiankang.model.User;
 import java.util.ArrayList;
-
+/*
+网络数据监听器
+风的影子
+*/
 public interface Net_whjk_Listener
 {
 	//

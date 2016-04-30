@@ -3,6 +3,11 @@ import android.widget.TextView;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageInfo;
 
+/*
+关于界面 风的影子
+*/
+
+
 public class AboutActivity extends StartActivity
 	{
    TextView text_appname,text_versionCode,text_versionName;

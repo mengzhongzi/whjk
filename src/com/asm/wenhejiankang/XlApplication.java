@@ -7,7 +7,10 @@ import com.asm.wenhejiankang.net.impl.NetContextImpl;
 import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.bluetooth.JKBluetoothManager;
 import com.asm.wenhejiankang.net.Net_whjk;
-
+/*
+app的application
+风的影子
+*/
 public class XlApplication extends Application
 	{
 
