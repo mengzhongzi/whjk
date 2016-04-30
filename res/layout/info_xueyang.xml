@@ -20,7 +20,8 @@
 			android:id="@+id/prior15"
 			android:layout_height="wrap_content"
 			android:text="@string/prior15"
-			android:layout_width="wrap_content"/>
+			android:layout_width="wrap_content"
+			android:background="@drawable/button_blue_small"/>
 
 		<TextView
 			android:id="@+id/time"
@@ -33,7 +34,8 @@
 			android:id="@+id/next15"
 			android:layout_height="wrap_content"
 			android:text="@string/next15"
-			android:layout_width="wrap_content"/>
+			android:layout_width="wrap_content"
+			android:background="@drawable/button_blue_small"/>
 
 	</LinearLayout>
 
