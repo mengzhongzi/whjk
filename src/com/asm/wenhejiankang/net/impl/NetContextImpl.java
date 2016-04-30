@@ -16,6 +16,7 @@ import com.asm.wenhejiankang.net.NetListener;
 import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.net.NetContext;
 import com.xl.game.tool.Log;
+import java.util.*;
 
 
 public class NetContextImpl extends BaseDao implements NetContext {
@@ -130,6 +131,8 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						System.err.println(e.getMessage());
 						if(listener!=null)
 							listener.onTiwenError();
+					} finally {
+						closeAll();
 					}
 				return list;
 			}
@@ -140,6 +143,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 				int res = getUpdate(sql, id,date,text);
 				if(res != 1 && listener!=null)
 					listener.onUpError();
+			    closeAll();
 
 			}
 
@@ -159,6 +163,8 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						System.err.println(e.getMessage());
 						if(listener!=null)
 							listener.onXieyaError();
+					} finally {
+						closeAll();
 					}
 				return list;
 			}
@@ -171,6 +177,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 				if(res != 1)
 					if(listener!=null)
 						listener.onUpError();		
+			    closeAll();
 			}
 
 		public ArrayList<String> getXieyang(Serializable id, Date start, Date end) {
@@ -189,6 +196,8 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						System.err.println(e.getMessage());
 						if(listener!=null)
 							listener.onXieyangError();
+					} finally {
+						closeAll();
 					}
 				return list;
 			}
@@ -200,6 +209,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 				int res = getUpdate(sql,id,date,spo2,pr,pi);
 				if(res != 1 && listener!=null)
 					listener.onUpError();
+				closeAll();
 
 			}
 
@@ -218,6 +228,8 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						System.err.println(e.getMessage());
 						if(listener!=null)
 							listener.onXietangError();
+					} finally {
+						closeAll();
 					}
 				return list;
 			}
@@ -228,7 +240,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 				int res = getUpdate(sql,id,date,text);
 				if(res != 1 &&listener!=null)
 					listener.onUpError();
-
+			    closeAll();
 			}
 
 		/**
@@ -240,5 +252,22 @@ public class NetContextImpl extends BaseDao implements NetContext {
 			{
 				return dateString.replace(" ","\n");
 			}
-
+	/*
+	*测试方法s
+		private void showLog(List<String> strs)
+		{
+			for(String str : strs)
+			{
+				Log.e("客官，这是您要的数据",str);
+			}
+		}
+		
+		private void showInputData(Serializable id,Date s,Date e)
+		{
+			Log.e("用户id",id + "");
+			Log.e("开始时间",s.toString());
+			Log.e("结束时间",e.toString());
+		}
+	*测试方法s
+    */
 	}
