@@ -16,6 +16,7 @@ import com.asm.wenhejiankang.net.NetListener;
 import com.asm.wenhejiankang.model.User;
 import com.asm.wenhejiankang.net.NetContext;
 import com.xl.game.tool.Log;
+import java.util.*;
 
 
 public class NetContextImpl extends BaseDao implements NetContext {
@@ -131,6 +132,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						if(listener!=null)
 							listener.onTiwenError();
 					}
+			    showLog(list);
 				return list;
 			}
 
@@ -160,6 +162,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						if(listener!=null)
 							listener.onXieyaError();
 					}
+			    showLog(list);
 				return list;
 			}
 
@@ -190,6 +193,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						if(listener!=null)
 							listener.onXieyangError();
 					}
+			    showLog(list);
 				return list;
 			}
 
@@ -219,6 +223,7 @@ public class NetContextImpl extends BaseDao implements NetContext {
 						if(listener!=null)
 							listener.onXietangError();
 					}
+			    showLog(list);
 				return list;
 			}
 
@@ -240,5 +245,13 @@ public class NetContextImpl extends BaseDao implements NetContext {
 			{
 				return dateString.replace(" ","\n");
 			}
+			
+		private void showLog(List<String> strs)
+		{
+			for(String str : strs)
+			{
+				Log.e("客官，这是您要的数据",str);
+			}
+		}
 
 	}
