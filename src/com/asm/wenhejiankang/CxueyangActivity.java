@@ -194,7 +194,7 @@ public class CxueyangActivity extends StartActivity implements OnClickListener, 
 				net.setListener(this);
 				list=new ArrayList<Xieyang_item>();
 				
-				debug_add(new Date(),30,30,30);
+				//debug_add(new Date(),30,30,30);
 			}
 			
 		//测试添加项目

@@ -162,7 +162,11 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				text_time.setOnClickListener(this);
 				application=(XlApplication)getApplication();
 				net=application.getNetContext();
-				if(net==null)finish();
+				if(net==null)
+				{
+					finish();
+					return ;
+				}
 				net.setListener(this);
 				nextdate=new Date();
 				nextdate.setTime(System.currentTimeMillis());

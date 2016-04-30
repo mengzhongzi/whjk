@@ -183,7 +183,10 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 				
 				net=application.getNetContext();
 				if(net==null)
+				{
 					finish();
+					return;
+				}
 				net.setListener(this);
 				Date date=new Date();
 				getTiwen(getNextDay(date),date);

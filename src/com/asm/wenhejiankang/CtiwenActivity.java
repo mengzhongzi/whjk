@@ -206,14 +206,18 @@ public class CtiwenActivity extends StartActivity implements OnClickListener,Net
 				text = (TextView)findViewById(R.id.tab_temperature);
 				application = (XlApplication)getApplication();
 				net = application.getNetContext();
-				if(net==null)finish();
+				if(net==null)
+				{
+					finish();
+					return ;
+				}
 				net.setListener(this);
 				
 				list = new ArrayList<Tiwen_item>();
 				adapter = new MyAdapter(this);
 				
 				listview.setAdapter(adapter);
-				debug_add(new Date(),37.0);
+				//debug_add(new Date(),37.0);
         
 			}
 

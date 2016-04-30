@@ -175,13 +175,17 @@ MyAdapter adapter;
 				btn_coll.setOnClickListener(this);
 				application = (XlApplication)getApplication();
 				net=application.getNetContext();
-				if(net==null)finish();
+				if(net==null)
+				{
+					finish();
+					return;
+				}
 				net.setListener(this);
 				list=new ArrayList<Xietang_item>();
 				adapter = new MyAdapter(this);
 				listview.setAdapter(adapter);
 				
-				debug_add(new Date(),30);
+				//debug_add(new Date(),30);
 			}
 	
 	

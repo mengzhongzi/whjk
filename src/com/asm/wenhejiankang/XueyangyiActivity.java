@@ -172,7 +172,11 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 				onSetChart();
 				application=(XlApplication)getApplication();
 				net=application.getNetContext();
-				if(net==null)finish();
+				if(net==null)
+				{
+					finish();
+					return ;
+				}
 				net.setListener(this);
 				nextdate=new Date();
 				update=getNextDay(nextdate);

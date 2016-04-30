@@ -182,13 +182,17 @@ public class CxueyaActivity extends StartActivity implements OnClickListener, On
 			
 				application = (XlApplication)getApplication();
 				net=application.getNetContext();
-				if(net==null)finish();
+				if(net==null)
+				{
+					finish();
+					return;
+				}
 				net.setListener(this);
 			list=new ArrayList<Xieya_item>();
 			
 				adapter = new MyAdapter(this);
 				listview.setAdapter(adapter);
-				debug_add(new Date(),120,80,80);
+				//debug_add(new Date(),120,80,80);
 			}
 
   //测试
