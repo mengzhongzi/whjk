@@ -187,10 +187,10 @@ public class WendujiActivity extends StartActivity implements OnChartValueSelect
 			}
 	
 	//获取指定时间到指定时间的体温
-	void getTiwen(Date next,Date date)
+	void getTiwen(Date update,Date nextdate)
 	{
-		net.getTiwen(next,date);
-		text_time.setText(""+next.getMonth()+"."+next.getDay()+"-"+date.getMonth()+"."+date.getDay());
+		net.getTiwen(update,nextdate);
+		text_time.setText(""+(update.getMonth()+1)+"."+update.getDate()+"-"+(nextdate.getMonth()+1)+"."+nextdate.getDate());
 	}
 	//获取前15天时间
 		public static Date getNextDay(Date date) {

@@ -283,7 +283,7 @@ public class XueyangyiActivity extends StartActivity implements OnChartValueSele
 		void getXueyang(Date next,Date date)
 			{
 				net.getXieyang(next,date);
-				text_time.setText(""+next.getMonth()+"."+next.getDay()+"-"+date.getMonth()+"."+date.getDay());
+				text_time.setText(""+(update.getMonth()+1)+"."+update.getDate()+"-"+(nextdate.getMonth()+1)+"."+nextdate.getDate());
 			}
 		//获取前15天时间
 		public static Date getNextDay(Date date) {

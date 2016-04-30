@@ -164,6 +164,7 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 				net=application.getNetContext();
 				net.setListener(this);
 				nextdate=new Date();
+				nextdate.setTime(System.currentTimeMillis());
 				update=getNextDay(nextdate);
 				getXieya(update,nextdate);
 				onSetChart();
@@ -252,21 +253,22 @@ public class XueyayiActivity extends StartActivity implements OnChartValueSelect
 			void getXieya(Date update,Date nextdate)
 			{
 				net.getXieya(update,nextdate);
-					text_time.setText(""+update.getMonth()+"."+update.getDay()+"-"+nextdate.getMonth()+"."+nextdate.getDay());
+					text_time.setText(""+(update.getMonth()+1)+"."+update.getDate()+"-"+(nextdate.getMonth()+1)+"."+nextdate.getDate());
 			}
 			
 		//获取前15天时间
 		public static Date getNextDay(Date date) {
 				long time=date.getTime();
-				time=time-15*1000*60*60*24;
-				/*
+				time-=15*3600000*24;
+				
 				 Calendar calendar = Calendar.getInstance();
 				 calendar.setTime(date);
-				 calendar.add(Calendar.DATE, -15);
+				 calendar.add(Calendar.DATE, -1);
 				 date = calendar.getTime();
-				 */
-				date=new Date(time);
-				return date;
+				 
+				
+				return new Date(time);
+				
 			}
 
 		//添加一个温度信息

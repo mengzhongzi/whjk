@@ -274,7 +274,7 @@ public class XuetangyiActivity extends StartActivity implements OnChartValueSele
 		void getXuetang(Date next,Date date)
 			{
 				net.getXietang(next,date);
-				text_time.setText(""+next.getMonth()+"."+next.getDay()+"-"+date.getMonth()+"."+date.getDay());
+				text_time.setText(""+(update.getMonth()+1)+"."+update.getDate()+"-"+(nextdate.getMonth()+1)+"."+nextdate.getDate());
 			}
 			
 		//获取前15天时间
